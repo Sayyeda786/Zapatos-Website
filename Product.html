@@ -52,7 +52,7 @@
 
   <div id="mySidebar" class="sidebar">
     <a href="" class="closebtn" onclick="closeNav()"><img src="img/close.png" width="25" height="25"></a>
-    <img src="img/logo.png" class="logo"  width="85%" height="85" >
+    <img src="img/logo.png" class="logo"  width="75%" height="75" >
     <br>
     <hr class="horizontal light mt-0 mb-2">
     <img src="img/dashboard.png"  width="25" height="25" style="float:left"> 
@@ -89,114 +89,12 @@
 
 
 
-<!---------------------------------------------------  Dashboard   -------------------------------------------------------------------------------------->
-
-<dvi  class="row">
-  <div class="column">
-
-    <div class="card">........................
-    </div>
-  </div>
-  <div class="column">
-    <div class="card">..</div>
-  </div>
-  <div class="column">
-    <div class="card">
-      <table>
-        <thead>
-          <tr>
-            <th scope="col" >Item</th>
-            <th scope="col">Avaliblity</th>
-            <th scope="col">Qty</th>
-            <th scope="col">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3">Subtotal</td>
-            <td>$135.36</td>
-          </tr>
-          <tr>
-            <td colspan="3">Tax</td>
-            <td>$135.36</td>
-          </tr>
-          <tr>
-            <td colspan="3">Total</td>
-            <td>$135.36</td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-  </div>
-  <div class="column">
-    <div class="card">..</div>
-  </div>
-  <div class="column">
-    <div class="card">  <h4>Pie Chart For product interactivity</h4>
-      <div class="chart"></div></div>
-  </div>
-  <div class="column">
-    <div class="card">..</div>
-  </div>
-  <div class="column">
-    <div class="card">..</div>
-  </div>
-  <div class="column">
-    <div class="card">
-      .................................
-
-    
-  
-
-    </div>
-  </div>
-
-</div>
 
 
 
 
 
-
-
-
-
-
-
-<!---------------------------------------------------  Dashboard   -------------------------------------------------------------------------------------->
-
-
-
-
-
-
-<!----------------------------------------------  Butoton Script ------------------------------------------------------------------------>
+<!---------------------------------------------- Start Butoton Script ------------------------------------------------------------------------>
    <script>
 
     function openNav() {
@@ -210,25 +108,88 @@
     
     }
     </script>
-<!----------------------------------------------   Butoton Script ------------------------------------------------------------------------>
+<!----------------------------------------------  End Butoton Script ------------------------------------------------------------------------>
+
+
+
+
+
+
+<!---------------------------------------------------  Product Form  -------------------------------------------------------------------------------------->
+<form action="info.php" method="post">
+
+    <div class="Content">
+    <div class="product-content">
+    <div class="PContent">
+            <label for="PName">Product-Name:</label>
+            <input type="text" id="Product-Name" name="PName">
+
+             <br>
+
+            <P>Product-Gender:</P>
+
+            <input type="radio" id="Male" name="PGender" value="Male">
+            <label for="Male">Male</label><br>
+            <input type="radio" id="Female" name="PGender" value="Female">
+            <label for="Female">Female</label><br>
+            <input type="radio" id="Kids" name="PGender" value="Kids">
+            <label for="Kids">Kids</label><br>
+
+
+
+
+            <div class="custom-select" style="width:200px;"></div>
+            <p>Product-Color:</p>
+            <select class="select-selected" id="color" name="PColor">
+            <option value="0">Select Color:</option>
+            <option value="1">Red</option>
+            <option value="2">Blue</option>
+            <option value="3">Green</option>
+            <option value="4">Yellow</option>
+            <option value="5">Pink</option>
+            <option value="6">White</option>
+            <option value="7">Black</option>
+            <option value="8">Brown</option>
+            <option value="9">Orenge</option>
+            </select>
+        </div>
+  <br>
+
+  <label for="PColor">Product-image:</label>
+  <input type="file" id="Product-image" name="Pimage" onchange="loadFile(event)" accept="img/png, img/jpg">
+  <img href= "Team_Project/img"id="display-img"></img>
+  <br>
+  <label for="Pdetails">Product-details:</label>
+  <textarea id="Product-details" name="Pdetails" rows="4" cols="50"> Write Details Of Product</textarea>
+
+  <input type="Submit" value="Submit">
+    </div>
+ 
+    </div>
+    </div>
+</form>
+
+
+<!---------------------------------------------------  Product Form  -------------------------------------------------------------------------------------->
+
+
+
 
 
 
 <!---------------------------------------------- Start FileUpload Script ------------------------------------------------------------------------>
 <script>
 
-  const  img_input = document.querySelector("#img_input");
-  var uploaded_img = ""
+/* should preview img to the web site img folder  */
+var loadFile = function(event) {
+    var output = document.getElementById('display-img');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
 
-  img_input.addEventListener("Change", function(){
-      const reader = new FileReader();
-      reader.addEventListener("load",()=>{
-        uploaded_img = reader.result;
-        document.querySelector("#display-img").style.backgroundImage = ` url(${uploaded_img})`;
 
-      });
-      reader.readAsDataURL(this.files[0])
-  });
 </script>
 <!----------------------------------------------  End FileUpload Script ------------------------------------------------------------------------>
 
