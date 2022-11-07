@@ -45,6 +45,7 @@ body {
  .navbar  li {
    padding: 20px;
    flex-grow: 1;
+   text-align: center;
  }
  .navbar a{
    color: white;
