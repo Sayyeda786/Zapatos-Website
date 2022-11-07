@@ -2,7 +2,34 @@
 body {
     font-family: "Oswald";
   }
-
+.header{
+    height:80px;
+    width:auto;
+  }
+.logo{
+    float:left;
+    margin-left:20px;
+}
+.topNav{
+    float:right;
+    height:20px;
+}
+.topNav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align:center;
+    padding-top: 20px;;
+}
+.topNav  li {
+    display:inline-block;
+  }
+.topNav a{
+   text-decoration: none;
+   padding-left:10px;
+   padding-right:20px;
+   color:#51087e;
+  }
 .navbar {
      background-color:  #51087e;
      height:50px;
@@ -23,17 +50,17 @@ body {
    text-align: center;
    padding-top:10px;
    padding-bottom:10px;
-   padding-left:30px;
+   padding-left:30px; 
    padding-right:30px; 
    text-decoration: none;
    font-size: 20px;
  }
 .navbar li a:hover:not(.active){
     color: rgb(137, 169, 228);
+    transition: 0.3s ease;
  }
  .navbar li a.active {
     color: rgb(137, 169, 228);
-  background-color: #04AA6D;
 }
 
 footer {
