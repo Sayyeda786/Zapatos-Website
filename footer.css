@@ -3,16 +3,17 @@ body {
     font-family: "Oswald";
   }
 .header{
-    height:80px;
-    width:auto;
+ height:100px;
+ width:auto;
   }
 .logo{
     float:left;
     margin-left:20px;
 }
 .topNav{
+    display:flex;
     float:right;
-    height:20px;
+    height:100px;
 }
 .topNav ul{
     list-style: none;
@@ -20,9 +21,11 @@ body {
     padding: 0;
     text-align:center;
     padding-top: 20px;;
+    flex-wrap:wrap;
 }
 .topNav  li {
     display:inline-block;
+    padding:10px;
   }
 .topNav a{
    text-decoration: none;
@@ -40,12 +43,10 @@ body {
    flex-wrap:wrap;
  }
  .navbar  li {
-   padding:20px;
-   flex-grow:1;
-   flex-shrink:1;
+   padding: 20px;
+   flex-grow: 1;
  }
  .navbar a{
-   display:block;
    color: white;
    text-decoration: none;
    font-size: 20px;
