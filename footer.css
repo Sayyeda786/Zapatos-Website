@@ -26,32 +26,27 @@ body {
   }
 .topNav a{
    text-decoration: none;
-   padding-left:10px;
-   padding-right:20px;
    color:#51087e;
   }
 .navbar {
-     background-color:  #51087e;
-     height:50px;
-     width:auto;
+     background-color: #51087e;
  }
  .navbar ul{
+   display:flex;
+   justify-content: center;
    list-style: none;
    margin: 0;
    padding: 0;
-   text-align:center;
+   flex-wrap:wrap;
  }
  .navbar  li {
-   display:inline-block;
+   padding:20px;
+   flex-grow:1;
+   flex-shrink:1;
  }
  .navbar a{
-   display: block;
+   display:block;
    color: white;
-   text-align: center;
-   padding-top:10px;
-   padding-bottom:10px;
-   padding-left:30px; 
-   padding-right:30px; 
    text-decoration: none;
    font-size: 20px;
  }
