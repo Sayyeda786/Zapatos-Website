@@ -3,12 +3,12 @@ body {
     font-family: "Oswald";
   }
 .header{
- height:100px;
+ height:110px;
  width:auto;
   }
 .logo{
     float:left;
-    margin-left:20px;
+    margin-left:15px;
 }
 .topNav{
     display:flex;
