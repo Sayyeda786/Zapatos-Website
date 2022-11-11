@@ -2,102 +2,157 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="footer.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="header">
-    <div class="logo">
-        <img src="img\zapatosLogo.png" width="200" height="100" alt="logo">
+
+    <!---HTML/JavaScript code for the discount popup--->
+    <div class="discount-popup">
+        <div class="popup-box">
+            <i class="fas fa-times close-btn"></i>
+            <h2>☃️ XMAS SALE ☃️</h2>
+            <p>Christmas is around the corner and we believe
+                our shoes should be affordable to everyone. <br>
+                Register/Sign into your account today to enjoy <span class="highlighted-text">20% off our entire
+                    store</span> until the 24th December.<br>
+                Treat someone special this christmas! Click below to claim your <span class="highlighted-text">20%</span> off now...</p>
+            <a href="#" class="btn">CLAIM DISCOUNT!</a>
+        </div>
     </div>
-    <div class="topNav">
+
+    <script type="text/javascript">
+        const popupScreen = document.querySelector(".discount-popup");
+        const popupBox = document.querySelector(".popup-box");
+        const closeBtn = document.querySelector(".close-btn");
+
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                popupScreen.classList.add("active");
+            }, 1500);
+        });
+
+        closeBtn.addEventListener("click", () => {
+            popupScreen.classList.remove("active");
+        });
+
+    </script>
+
+    <!---HTML code for the top bar--->
+    <div class="header">
+        <div class="logo">
+            <img src="img\zapatosLogo.png" width="200" height="100" alt="logo">
+        </div>
+        <div class="topNav">
+            <ul>
+                <li><a href="#">Login/Sign Up</a></li>
+                <li><a href="#">Shopping Cart</a></li>
+            </ul>
+        </div>
+    </div>
+    <!---HTML code for the nav bar--->
+    <div class="navbar">
         <ul>
-            <li><a href="#">Login/Sign Up</a></li>
-            <li><a href="#">Shopping Cart</a></li>
-          </ul>
+            <li><a href="footer.html" class="active">Home</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="Contact us.html">Contact us</a></li>
+            <li><a href="#">Shop Order</a></li>
+        </ul>
     </div>
-</div>
-<div class="navbar">
-  <ul>
-     <li><a href="#" class="active">Home</a></li>
-     <li><a href="#">Men</a></li>
-     <li><a href="#">Women</a></li>
-     <li><a href="#">Kids</a></li>
-     <li><a href="#">About us</a></li>
-     <li><a href="#">Contact us</a></li>
-     <li><a href="#">Shop Order</a></li>
-   </ul>
-</div>
-<!---NOT NEEDED, Just pushing the page down for an example until other pages are developed--->
-<header>
+
+    <!---HTML code for the banner--->
+    <div class="banner">
+        <div class="discount">
+            <h1>ZAPATOS XMAS SALE</h1>
+            <h2>20% OFF</h2>
+        </div>
+    </div>
+
+
+
+    <!---NOT NEEDED, Just pushing the page down for an example until other pages are developed--->
     <header>
-        <h1>pushing down</h1>
-        <br> <h1>pushing footer down</h1>
-        <br> <h1>pushing footer down</h1>
-        <br> <h1>pushing footer down</h1>
-        <br> <h1>pushing footer down</h1>
-        <br> <h1>pushing footer down</h1>
-        <br> <h1>pushing footer down</h1>
-        <br> <h1>pushing footer down</h1>
-        <br> <h1>pushing footer down</h1>
-        <br> <h1>pushing footer down</h1>
+        <header>
+            <h1>pushing down</h1>
+            <br>
+            <h1>pushing footer down</h1>
+            <br>
+            <h1>pushing footer down</h1>
+            <br>
+            <h1>pushing footer down</h1>
+            <br>
+            <h1>pushing footer down</h1>
+            <br>
+            <h1>pushing footer down</h1>
+            <br>
+            <h1>pushing footer down</h1>
+            <br>
+            <h1>pushing footer down</h1>
+            <br>
+            <h1>pushing footer down</h1>
+            <br>
+            <h1>pushing footer down</h1>
+        </header>
     </header>
-</header>
 
-<main>
+    <main>
 
-</main>
+    </main>
 
-<!---HTML code for the entire footer--->
-<footer>
-    <div class="footer-container">
-        <div class="footer-top">
-            <div class="footer-columntop">
-            <h1>HAVE ANY QUESTIONS?</h1>
-            <p>Feel free to contact us as your feedback is valuable to us.</p>
-            <a href="#"><button type="button">Contact Us</button></a>
+    <!---HTML code for the entire footer--->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-columntop">
+                    <h1>HAVE ANY QUESTIONS?</h1>
+                    <p>Feel free to contact us as your feedback is valuable to us.</p>
+                    <a href="Contact us.html"><button type="button">Contact Us</button></a>
+                </div>
             </div>
-        </div>
-        <div class= "footer-main">
-            <div class = "footer-column">
-                <h3 class ="heading">QUICK LINKS</h3>
-                <a href="#" class="footer-link">Home</a>
-                <a href="#" class="footer-link">About</a>
-                <a href="#" class="footer-link">Shop</a>
-                <a href="#" class="footer-link">Contact</a>
+            <div class="footer-main">
+                <div class="footer-column">
+                    <h3 class="heading">QUICK LINKS</h3>
+                    <a href="#" class="footer-link">Home</a>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="#" class="footer-link">Shop</a>
+                    <a href="#" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3 class="heading">EXTRA LINKS</h3>
+                    <a href="#" class="footer-link">Login</a>
+                    <a href="#" class="footer-link">Register</a>
+                    <a href="#" class="footer-link">Basket</a>
+                    <a href="#" class="footer-link">Orders</a>
+                </div>
+                <div class="footer-column">
+                    <h3 class="heading">CONTACT INFO</h3>
+                    <!--<img src="phone.png" alt="Phone icon">-->
+                    <a href="#" class="footer-link">
+                        <span class="material-icons md-18">phone</span>+1 23 456-7890</a>
+                    <a href="#" class="footer-link">
+                        <span class="material-icons md-18">phone</span>+111-222-3333</a>
+                    <a href="#" class="footer-link">
+                        <span class="material-icons md-18">email</span>Zapatos@outlook.com</a>
+                    <a href="#" class="footer-link">
+                        <span class="material-icons md-18">room</span>Birmingham, England</a>
+                </div>
+                <div class="footer-column">
+                    <h3 class="heading">FOLLOW US</h3>
+                    <a href="https://www.facebook.com/" class="footer-link">Facebook
+                        <a href="https://www.twitter.com/" class="footer-link">Twitter</a>
+                        <a href="https://www.instagram.com/" class="footer-link">Instagram</a>
+                        <a href="https://www.linkedin.com/" class="footer-link">LinkedIn</a>
+                </div>
             </div>
-            <div class = "footer-column">
-                <h3 class ="heading">EXTRA LINKS</h3>
-                <a href="#" class="footer-link">Login</a>
-                <a href="#" class="footer-link">Register</a>
-                <a href="#" class="footer-link">Basket</a>
-                <a href="#" class="footer-link">Orders</a>
-            </div>
-            <div class = "footer-column">
-                <h3 class ="heading">CONTACT INFO</h3>
-                <!--<img src="phone.png" alt="Phone icon">-->
-                <a href="#" class="footer-link">
-                <span class="material-icons md-18">phone</span>+1 23 456-7890</a>
-                <a href="#" class="footer-link">
-                <span class="material-icons md-18">phone</span>+111-222-3333</a>
-                <a href="#" class="footer-link">
-                <span class="material-icons md-18">email</span>Zapatos@outlook.com</a>
-                <a href="#" class="footer-link">
-                <span class="material-icons md-18">room</span>Birmingham, England</a>
-            </div>
-            <div class = "footer-column">
-                <h3 class ="heading">FOLLOW US</h3>
-                <a href="https://www.facebook.com/" class="footer-link">Facebook
-                <a href="https://www.twitter.com/" class="footer-link">Twitter</a>
-                <a href="https://www.instagram.com/" class="footer-link">Instagram</a>
-                <a href="https://www.linkedin.com/" class="footer-link">LinkedIn</a>
-            </div>
-        </div>
-</footer>
+    </footer>
 
 </body>
 </html>
