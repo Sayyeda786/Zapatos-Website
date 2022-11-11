@@ -1,6 +1,12 @@
 
+*{
+    box-sizing: border-box;
+  }
+  
 body {
     font-family: "Oswald";
+    min-height: 100vh;
+    background-color: rgb(236, 236, 236);
   }
 .header{
  height:110px;
@@ -10,6 +16,96 @@ body {
     float:left;
     margin-left:15px;
 }
+
+/*******SALE POPUP*******/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.discount-popup{
+  position: fixed;
+  background: rgba(255, 255, 255, 0.014);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  transition: 1s ease;
+  transition-property: visibility;
+}
+
+.discount-popup.active{
+  visibility: visible;
+}
+
+.popup-box{
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  max-width: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  padding: 120px 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+  transform: scale(0);
+  transition: 0.5s ease;
+  transition-property: transform;
+}
+
+.discount-popup.active .popup-box{
+  transform: scale(1);
+}
+
+.popup-box h2{
+  font-size: 3.1em;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.highlighted-text{
+    color: rgb(80, 172, 202);
+    font-weight: 750;
+    text-transform: uppercase;
+}
+
+.popup-box p{
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.popup-box .btn{
+  color: #fff;
+  background: red;
+  font-size: 1.1em;
+  font-weight: 525;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 7px 27px;
+  border-radius: 3px;
+}
+
+.close-btn{
+  position: absolute;
+  font-size: 1em;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.5s ease;
+  transition-property: opacity;
+}
+
+.close-btn:hover{
+  opacity: 1;
+}
+
+/******NAV BAR*******/
+
 .topNav{
     display:flex;
     float:right;
@@ -58,6 +154,62 @@ body {
  .navbar li a.active {
     color: rgb(137, 169, 228);
 }
+
+/******ADVERT BANNER*******/
+
+.banner {
+    background:url(snow.gif);
+    background-size: cover;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    padding: 20px 15px;
+    height: 100px;
+  }
+.banner h1{
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-style: bold;
+    margin-top: -10px;
+}
+.banner h2{
+    font-size: 40px;
+    margin-top: -30px;
+}
+div:hover h2{
+    animation: shake 1s;
+  }
+  @keyframes shake{
+    0%{
+      transform: translateX(0)
+    }
+    25%{
+      transform: translateX(25px);
+    }
+    50%{
+      transform: translateX(-25px);
+    }
+    100%{
+      transform: translateX(0px);
+    }
+  }
+  /*
+  .banner a {
+    display: inline-block;
+    background: #fff;
+    color: #36465d;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: .5s;
+  }
+  .banner a:hover {
+    background: #333;
+    color: #fff;
+    padding: 15px 20px;
+  }
+
+/******FOOTER*******/
 
 footer {
     background-color: #51087e;
@@ -123,6 +275,152 @@ footer button:hover{
     font-size: 18px;
 }
 
+/*CONTACT US PAGE*/
+
+.contact{
+  padding: 60px 20px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+.contact-form h1{
+  font-size: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.contact-form p{
+  letter-spacing: 0.5px;
+  line-height: 25px;
+  font-size: 1.1rem;
+  margin-bottom: 3.8rem;
+  text-align: center;
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 550;
+  margin-bottom: 4px;
+}
+.user-details .input-box input{
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.2s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #51087e;
+}
+form .Priority-rating .priority-title{
+  font-size: 20px;
+  font-weight: 550;
+ }
+ form .category{
+   display: flex;
+   width: 90%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #000000;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+form label:hover{
+  color: #51087e;
+  cursor: pointer;
+}
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 50px;
+   margin: 40px 0
+ }
+ form textarea{
+  resize: none;
+  width: 100%;
+  padding: 17px;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  background: #e2e2e2;
+  color: rgb(0, 0, 0);
+  margin-bottom: 0.7rem;
+  border-radius: 10px;
+}
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: #51087e;
+ }
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+.FAQS{
+  background-color: rgb(236, 236, 236);
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+}
+.title{
+  font-size: 3rem;
+  margin: 2rem 0rem;
+}
+.FAQ{
+  cursor: pointer;
+  max-width: 600px;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid black;
+}
+.questions{
+  letter-spacing: 1.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.answer{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.5s ease;
+}
+.answer p {
+  font-size: 1.1rem;
+}
+.FAQ.active .answer{
+  max-height: 300px;
+}
 
 
 @media only screen and (max-width: 768px) {
