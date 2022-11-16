@@ -6,7 +6,7 @@ body {
   font-family: "Oswald";
   min-height: 100vh;
   background-color: rgb(236, 236, 236);
-  text-align: center;
+
 }
 html {
   scroll-behavior: smooth;
@@ -295,7 +295,7 @@ footer button:hover {
 
 /******About-us*******/
 .typing {
-  display: inline-block;
+  text-align: center;
   padding: 60px 20px;
   max-width: 1250px;
   margin: 0 auto;
@@ -323,7 +323,8 @@ footer button:hover {
   }
 
   to {
-    width: 100%
+    width: 100%;
+    border-right: hidden;
   }
 }
 
@@ -384,9 +385,11 @@ footer button:hover {
 .contact-form h1 {
   font-size: 50px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .contact-form p {
+  text-align: center;
   letter-spacing: 0.5px;
   line-height: 25px;
   font-size: 1.1rem;
