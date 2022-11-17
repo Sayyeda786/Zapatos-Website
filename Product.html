@@ -59,13 +59,13 @@
    <a href="Admine.html" style="text-decoration: none ;"><i class="fa fa-fw fa-home" style="float: right;"></i> Dashboard</a>
     <br>
     <img src="img/shoe-shop.png" width="25px" height="25" style="float:left">  
-    <a href="Product.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Product</a>
+    <a href="Avalibilty.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Avaliblity</a>
     <br>
     <img src="img/cv.png" width="25px" height="25" style="float:left">  
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Profile</a>
+    <a href="Product.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Add Products</a>
     <br>
     <img src="img/add-user.png" width="25px" height="25" style="float:left">  
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Sales </a>
+    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Profile </a>
     <br>
       <h6>Account Mangment</h6>
     <img src="img/logout.png" width="25px" height="25" style="float:left">  
@@ -122,25 +122,26 @@
     <div class="product-content">
     <div class="PContent">
             <label for="PName">Product-Name:</label>
-            <input type="text" id="Product-Name" name="PName">
+            <input type="text" id="Product-Name" name="PName" minlength="5" required placeholder="Enter Name"
+            oninvalid="this.setCustomValidity('Enter Product Name Here')" oninput="this.setCustomValidity('')"/>
 
              <br>
 
             <P>Product-Gender:</P>
 
-            <input type="radio" id="Male" name="PGender" value="Male">
+            <input type="radio" id="Male" name="PGender" value="Male" required>
             <label for="Male">Male</label><br>
-            <input type="radio" id="Female" name="PGender" value="Female">
+            <input type="radio" id="Female" name="PGender" value="Female" required>
             <label for="Female">Female</label><br>
-            <input type="radio" id="Kids" name="PGender" value="Kids">
+            <input type="radio" id="Kids" name="PGender" value="Kids" required>
             <label for="Kids">Kids</label><br>
 
 
-
-
-            <div class="custom-select" style="width:200px;"></div>
             <p>Product-Color:</p>
-            <select class="select-selected" id="color" name="PColor">
+            <div class="search_categories" >
+            <div class="select" >
+            <select class="search_categories" id="color" name="PColor" required
+            oninvalid="this.setCustomValidity('Pick Product Color Here')" oninput="this.setCustomValidity('')">
             <option value="0">Select Color:</option>
             <option value="1">Red</option>
             <option value="2">Blue</option>
@@ -152,15 +153,19 @@
             <option value="8">Brown</option>
             <option value="9">Orenge</option>
             </select>
+          </div>
         </div>
   <br>
 
   <label for="PColor">Product-image:</label>
-  <input type="file" id="Product-image" name="Pimage" onchange="loadFile(event)" accept="img/png, img/jpg">
+  <input class="custom-file-input" type="file" id="Product-image" name="Pimage" onchange="loadFile(event)" accept="img/png,img/jpg" required 
+  oninvalid="this.setCustomValidity('Please Upload image')" oninput="this.setCustomValidity('')">
   <img href= "Team_Project/img"id="display-img"></img>
   <br>
   <label for="Pdetails">Product-details:</label>
-  <textarea id="Product-details" name="Pdetails" rows="4" cols="50"> Write Details Of Product</textarea>
+
+  <textarea id="Product-details" name="Pdetails" placeholder="Write Details Of Product"  rows="4" cols="50" minlength="10" required 
+  oninvalid="this.setCustomValidity('Enter Product details Here')" oninput="this.setCustomValidity('')"></textarea>
 
   <input type="Submit" value="Submit">
     </div>
