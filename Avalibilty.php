@@ -1,38 +1,22 @@
+
+
+
 <?php
-
-$PName =$_POST['PName'];
-$PGender =$_POST['PGender'];
-$PColor =$_POST['PColor'];
-$Pimage =$_POST['Pimage'];
-$Pdetails =$_POST['Pdetails'];
-
-
-// connect my database
-
-$conn = new mysqli('localhost','root',' ');
-if($conn->connect_error){
-    die('Connection Fiald : ' .$conn->connect_error);
-}else{
-    $stmt = $conn->prepare("insert into registration(PName,PGender,PColor,Pimage,Pdetails)
-    values(?,?,?,?,?)");
-    $stmt->bind_param("sssssi",$PName,$PGender,$PColor,$Pimage,$Pdetails);
-    $stmt->execute();
-    echo "Submition Successfully..... ";
-    $stmt->close();
-    $conn->close();
+$connection = mysql_connect("localhost","root"," ");
+$db = mysql_select_db("Database name",$connection);
+$query = mysql_query("SELECT id,PName,Pimage,PGender from table_name", $connection);
+if(mysql_num_row($query)>0){
+    while($row = mysql_fitch_assoc($query)){
+        echo " id : " .$row["id"]. " PName : " .$row["PName"]. " Pimage : " .$row["Pimage"]. " PGender : " .$row["PGender"]. "<br>";
+    }
+} else{
+    echo " 0 results";
 }
 
+
+mysqli_close($conn);
+
 ?>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -87,7 +71,10 @@ if($conn->connect_error){
     <li><a><button class="openbtn" onclick="openNav()"><img src="img/menu.png" width="25" height="25"></button></a></li>
    
   </ul>
-</div> 
+</div>
+
+
+ 
 <!-------------------------End Top NavBar Menu-------------------------------------------->
 
 
@@ -131,115 +118,9 @@ if($conn->connect_error){
     </div>
 
 
-    
-
-   <!----------------------------------------------- End Side NavBar Menu ----------------------------------------------------------->
 
 
-
-<!---------------------------------------------------  Dashboard   -------------------------------------------------------------------------------------->
-
-<dvi  class="row">
-  <div class="column">
-
-    <div class="card">........................
-    </div>
-  </div>
-  <div class="column">
-    <div class="card">..</div>
-  </div>
-  <div class="column">
-    <div class="card">
-      <table>
-        <thead>
-          <tr>
-            <th scope="col" >Item</th>
-            <th scope="col">Avaliblity</th>
-            <th scope="col">Qty</th>
-            <th scope="col">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3">Subtotal</td>
-            <td>$135.36</td>
-          </tr>
-          <tr>
-            <td colspan="3">Tax</td>
-            <td>$135.36</td>
-          </tr>
-          <tr>
-            <td colspan="3">Total</td>
-            <td>$135.36</td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-  </div>
-  <div class="column">
-    <div class="card">..</div>
-  </div>
-  <div class="column">
-    <div class="card">  <h4>Pie Chart For product interactivity</h4>
-      <div class="chart"></div></div>
-  </div>
-  <div class="column">
-    <div class="card">..</div>
-  </div>
-  <div class="column">
-    <div class="card">..</div>
-  </div>
-  <div class="column">
-    <div class="card">
-      .................................
-
-    
-  
-
-    </div>
-  </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<!---------------------------------------------------  Dashboard   -------------------------------------------------------------------------------------->
-
-
+  <!---------------------------- End Side NavBar Menu ------------------------------------>
 
 
 
@@ -260,26 +141,6 @@ if($conn->connect_error){
     </script>
 <!----------------------------------------------   Butoton Script ------------------------------------------------------------------------>
 
-
-
-<!---------------------------------------------- Start FileUpload Script ------------------------------------------------------------------------>
-<script>
-
-  const  img_input = document.querySelector("#img_input");
-  var uploaded_img = ""
-
-  img_input.addEventListener("Change", function(){
-      const reader = new FileReader();
-      reader.addEventListener("load",()=>{
-        uploaded_img = reader.result;
-        document.querySelector("#display-img").style.backgroundImage = ` url(${uploaded_img})`;
-
-      });
-      reader.readAsDataURL(this.files[0])
-  });
-</script>
-<!----------------------------------------------  End FileUpload Script ------------------------------------------------------------------------>
-
-
-  </body>
-    </html>
+</body>
+</html>
+    
