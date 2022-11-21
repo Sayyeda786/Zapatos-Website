@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <title>Men</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="StyleSheet.css">
@@ -10,90 +11,62 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 <style type="text/css">
-    .homepageIMG{
-      background-color: whitesmoke;
-      width:1095px;
-      height:840px;
-      margin:auto;
+
+    .product_container{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr 1fr ;
+        grid-column-gap:30px;
+        grid-row-gap:30px;
     }
-    .homepageMEN{
-        height:815px;
-        float:left;
-        width:500px;
-        background-color: red;
-        margin:15px;
-        margin-right: 0px;
-        cursor:pointer;
-        overflow: hidden;
-    }
-    .homepageIMG img{
-        transition:transform 1s;
-    }
-    .homepageMEN:hover img{
-        transform:scale(1.3);
-    }
-    .homepageWOMEN{
-        height:400px;
-        float:left;
-        width:550px;
-        background-color: red;
-        margin:15px;
-        cursor:pointer;
-        overflow:hidden;
-    }
-    .homepageWOMEN:hover img{
-        transform:scale(1.3);
-    }
-    .homepageKIDS{
-        height:400px;
-        float:left;
-        width:550px;
-        background-color: red;
-        margin:15px;
-        margin-top:0px;
-        cursor:pointer;
-        overflow:hidden;
-    }
-    .homepageKIDS:hover img{
-        transform:scale(1.3);
-    }
+   
+   .product_list{
+    padding: 3em;
+   }
+   .product_list .card{
+    background-color: whitesmoke;
+    padding:1em;
+    box-shadow: 0px 10px 5px #b2bec3;
+    text-align:center;
     
+   } 
+   .card .title{
+    font-size: 20px;
+    font-weight: bold;
+   }
+   .card img{
+    max-width: 100%;
+    cursor:pointer;
+    transition:transform 1s;
+   }
+   .card .image{
+    overflow:hidden;
+   }
+
+   .card:hover img{
+        transform:scale(1.3);
+    }
+
+   .card .text{
+    text-align:left;
+   }
+   .cart_button{
+    background-color: rgb(137, 169, 228);
+    border:none;
+    padding:1em;
+    border-radius:5px;
+    font-weight:bold;
+    float:right;
+   }
+   .cart_button:hover{
+    background-color: #51087e;
+    transition: 0.3s ease;
+   }
 </style>
 </head>
 
 <body>
 
-    <!---HTML/JavaScript code for the discount popup-->
-    <div class="discount-popup">
-        <div class="popup-box">
-            <i class="fas fa-times close-btn"></i>
-            <h2>☃️ XMAS SALE ☃️</h2>
-            <p>Christmas is around the corner and we believe
-                our shoes should be affordable to everyone. <br>
-                Register/Sign into your account today to enjoy <span class="highlighted-text">20% off our entire
-                    store</span> until the 24th December.<br>
-                Treat someone special this christmas! Click below to claim your <span class="highlighted-text">20%</span> off now...</p>
-            <a href="#" class="btn">CLAIM DISCOUNT!</a>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        const popupScreen = document.querySelector(".discount-popup");
-        const popupBox = document.querySelector(".popup-box");
-        const closeBtn = document.querySelector(".close-btn");
-
-        window.addEventListener("load", () => {
-            setTimeout(() => {
-                popupScreen.classList.add("active");
-            }, 1500);
-        });
-
-        closeBtn.addEventListener("click", () => {
-            popupScreen.classList.remove("active");
-        });
-
-    </script>
-
+   
     <!---HTML code for the top bar--->
     <div class="header">
         <div class="logo">
@@ -102,18 +75,16 @@
         <div class="topNav">
             <ul>
                 <!---Sign in and register pop up--->
-                <li><a href="log-in.html">Login/Sign Up</a></li>
-                <li><a href="#"><i class="fa fa-shopping-cart" style="font-size:22px"></i></a></li>
+                <li><a href="#popup" class="trigger">Login/Sign Up</a></li>
+                <li><a href="#">Shopping Cart</a></li>
             </ul>
         </div>
     </div>
-
-    
     <!---HTML code for the nav bar--->
     <div class="navbar">
         <ul>
-            <li><a href="home.html" class="active">Home</a></li>
-            <li><a href="men.html">Men</a></li>
+            <li><a href="home.html" >Home</a></li>
+            <li><a href="men.html" class="active">Men</a></li>
             <li><a href="women.html">Women</a></li>
             <li><a href="kids.html">Kids</a></li>
             <li><a href="About-us.html">About us</a></li>
@@ -132,22 +103,116 @@
 
 
     <!---NOT NEEDED, Just pushing the page down for an example until other pages are developed--->
-    <header>
-    </header>
+
 
     <main>
-      <div class="homepageIMG">
-            <div class="homepageMEN">
-                <a href="men.html"> <img src="img\men.jpg" width="500" height="815" alt="men"></a>
-            </div>
-            <div class="homepageWOMEN">
-                <a href="women.html"> <img src="img\women.jpg" width="550" height="400" alt="women"></a>
-            </div>
-            <div class="homepageKIDS">
-                <img src="img\Kids-Shoes.jpg.jpg" width="550" height="400" alt="kids">
-            </div>
+     <section class="product_list">
+      <h1>Shoes 4 Men</h1>
+        <div class="product_container">
 
+        
+      <div class="card">
+       <div class="title">Shoe 1</div>
+       <div class="image"><img src="img\Men Shoes\1.png"></div>
+       <div class="text">This is a demo product .</div>
+       <div><button class="cart_button">Add to Cart</button></div>
       </div>
+
+      <div class="card">
+        <div class="title">Shoe 2</div>
+        <div class="image"><img src="img\Men Shoes\2.png"></div>
+        <div class="text">This is a demo product</div>
+        <div><button class="cart_button">Add to Cart</button></div>
+       </div>
+
+       <div class="card">
+        <div class="title">Shoe 2</div>
+        <div class="image"><img src="img\Men Shoes\3.png"></div>
+        <div class="text">This is a demo product</div>
+        <div><button class="cart_button">Add to Cart</button></div>
+       </div>
+
+       <div class="card">
+        <div class="title">Shoe 2</div>
+        <div class="image"><img src="img\Men Shoes\4.png"></div>
+        <div class="text">This is a demo product</div>
+        <div><button class="cart_button">Add to Cart</button></div>
+       </div>
+
+       <div class="card">
+        <div class="title">Shoe 2</div>
+        <div class="image"><img src="img\Men Shoes\5.png"></div>
+        <div class="text">This is a demo product</div>
+        <div><button class="cart_button">Add to Cart</button></div>
+       </div>
+
+       <div class="card">
+        <div class="title">Shoe 2</div>
+        <div class="image"><img src="img\Men Shoes\6.png"></div>
+        <div class="text">This is a demo product</div>
+        <div><button class="cart_button">Add to Cart</button></div>
+       </div>
+        
+       <div class="card">
+        <div class="title">Shoe 2</div>
+        <div class="image"><img src="img\Men Shoes\7.png"></div>
+        <div class="text">This is a demo product</div>
+        <div><button class="cart_button">Add to Cart</button></div>
+       </div>
+
+       <div class="card">
+        <div class="title">Shoe 2</div>
+        <div class="image"><img src="img\Men Shoes\8.png"></div>
+        <div class="text">This is a demo product</div>
+        <div><button class="cart_button">Add to Cart</button></div>
+       </div>
+
+       <div class="card">
+        <div class="title">Shoe 2</div>
+        <div class="image"><img src="img\Men Shoes\9.png"></div>
+        <div class="text">This is a demo product</div>
+        <div><button class="cart_button">Add to Cart</button></div>
+       </div>
+
+       <div class="card">
+        <div class="title">Shoe 2</div>
+        <div class="image"><img src="img\Men Shoes\10.png"></div>
+        <div class="text">This is a demo product</div>
+        <div><button class="cart_button">Add to Cart</button></div>
+       </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+    </div>
+    
+    
+
+
+    </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
 
     <!---HTML code for the entire footer--->
