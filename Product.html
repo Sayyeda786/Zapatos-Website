@@ -16,27 +16,33 @@
 <div id="main" class="topbar">
   <ul>
     <div class="dropdown">
-    <li>    
-      <a href=""><button class="dropbtn"><img src="img/user.png" width="25" height="25"><i class="fa fa-caret-down"></i>
+      <li>    
+        <a href=""><button class="dropbtn"><img src="img/user.png" width="25" height="25"><i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <button type="button" class="btn" style="background-color: #98BDFF; " > <a href="#"><img src="img/logout.png" width="25" height="25">Signout </a></button>
+          <a href="#"><img src="img/editing.png" width="25" height="25">Edite</a>
+        </div>
+      </div>
+        </a></li>
+        <div class="dropdown">
+      <li><a href=""><button  class="dropbtn"><img src="img/world.png"  width="25" height="25"><i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="#"><img src="img/logout.png" width="25" height="25">Signout </a>
-        <a href="#"><img src="img/editing.png" width="25" height="25">Edite</a>
+        <a href="#"><img src="img/united-kingdom.png" width="25" height="25">English(UK)</a>
+        <a href="#"><img src="img/united-states.png" width="25" height="25">English(USA)</a>
       </div>
-    </div>
-      </a></li>
-      <div class="dropdown">
-    <li><a href=""><button  class="dropbtn"><img src="img/world.png"  width="25" height="25"><i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#"><img src="img/united-kingdom.png" width="25" height="25">English(UK)</a>
-      <a href="#"><img src="img/united-states.png" width="25" height="25">English(USA)</a>
-    </div>
-  </div> </a></li>
-    
-    <li><a><button class="openbtn" onclick="openNav()"><img src="img/menu.png" width="25" height="25"></button></a></li>
-   
+    </div> </a></li>
+      
+      <li><a><button class="openbtn" onclick="openNav()"><img src="img/menu.png" width="25" height="25"></button></a></li>
+        
+  
+      <from action="" class="search-bar">
+        <input type="search" name="search" required autocomplete="off">
+        <button class=" search-button" type="submit"><spam></spam></button>
+       </from>
   </ul>
+
 </div>
 
 
@@ -137,7 +143,7 @@
             <label for="Kids">Kids</label><br>
 
 
-            <p>Product-Color:</p>
+            <label for="PColor">Product-Color:</label>
             <div class="search_categories" >
             <div class="select" >
             <select class="search_categories" id="color" name="PColor" required
@@ -156,7 +162,14 @@
           </div>
         </div>
   <br>
+  <label for="currency-field">Enter Amount:</label>
+    
+  <input type="text" name="currency-field" id="currency-field" pattern="^\d+(?:,\d{3})*\.\d{2}$"  pattern-invalid-message="Please wright the right format, Ex: 1000.50 | 1000 | 15 | 0.00"  data-type="currency" required  placeholder="$1,000,000.00">
+    
 
+<label for="artical-number">Artical Number:</label>
+<input type="text" name="artical-number" id="artical-number" required placeholder="Artical-number" 
+oninvalid="this.setCustomValidity('Please wrigth artical-number')" oninput="this.setCustomValidity('')">
   <label for="PColor">Product-image:</label>
   <input class="custom-file-input" type="file" id="Product-image" name="Pimage" onchange="loadFile(event)" accept="img/png,img/jpg" required 
   oninvalid="this.setCustomValidity('Please Upload image')" oninput="this.setCustomValidity('')">
@@ -166,6 +179,7 @@
 
   <textarea id="Product-details" name="Pdetails" placeholder="Write Details Of Product"  rows="4" cols="50" minlength="10" required 
   oninvalid="this.setCustomValidity('Enter Product details Here')" oninput="this.setCustomValidity('')"></textarea>
+<p id="count_result">Total chracters : 0 </p>
 
   <input type="Submit" value="Submit">
     </div>
@@ -177,8 +191,31 @@
 
 <!---------------------------------------------------  Product Form  -------------------------------------------------------------------------------------->
 
+<!--------------------------------------------------- Start Count/currency Script  -------------------------------------------------------------------------------------->
+<script>
+let myText = document.getElementById("Product-details");
+myText.addEventListener("input", ()=> {
+  let count = (myText.value).length;
+  document.getElementById("count_result").textContent = `Total chracters: ${count}`;
+});
 
 
+
+
+    document.querySelectorAll('[pattern-invalid-message]')
+    .forEach(input => {
+        input.oninvalid = function(event) {
+            let invalidMessage = event.target.getAttribute('pattern-invalid-message');
+            if (invalidMessage) {
+                event.target.setCustomValidity(invalidMessage);
+            }
+        }
+    })
+
+  
+</script>
+
+<!---------------------------------------------------  End Count/currency Script  -------------------------------------------------------------------------------------->
 
 
 
