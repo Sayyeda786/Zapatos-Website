@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<style type="text/css">
+    .product_name{
+    padding-top: 0px;
+    margin-top: 0px;;
+    }
+.flex-container {
+  display: flex;
+  justify-content:left;
+  flex-wrap:wrap;
+  padding:20px;
+  background-color: aliceblue;
+}
+
+.big_img{
+    margin-right:100px;
+    margin-left:50px;
+    margin-top: 25px;
+    justify-content: left;
+}
+.big_img img{
+    width: 600px;
+    height: 420px;
+}
+.article_no{
+    font-size: xx-small;
+}
+.details{
+    
+}
+.cart_button{
+    background-color: rgb(137, 169, 228);
+    border:none;
+    padding:1em;
+    margin-top: 15px;
+    border-radius:5px;
+    font-weight:bold;
+   }
+   .cart_button:hover{
+    background-color: #51087e;
+    transition: 0.3s ease;
+    cursor:pointer;
+   }
+
+   .buy_now{
+    background-color: rgb(137, 169, 228);
+    border:none;
+    padding:1em;
+    border-radius:5px;
+    font-weight:bold;
+   }
+   .buy_now:hover{
+    background-color: #51087e;
+    transition: 0.3s ease;
+    cursor:pointer;
+   }
+   .description{
+    flex-basis: 100%;
+    margin-left: 50px;
+   }
+
+</style>
+</head>
+
+<body>
+
+   
+    <!---HTML code for the top bar--->
+    <div class="header">
+        <div class="logo">
+            <img src="img\ZapatosLogo.png" width="200" height="100froo" alt="logo">
+        </div>
+        <div class="topNav">
+            <ul>
+                <!---Sign in and register pop up--->
+                <li><a href="#popup" class="trigger">Login/Sign Up</a></li>
+                <li><a href="#">Shopping Cart</a></li>
+            </ul>
+        </div>
+    </div>
+    <!---HTML code for the nav bar--->
+    <div class="navbar">
+        <ul>
+            <li><a href="home.html" >Home</a></li>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+            <li><a href="About-us.html">About us</a></li>
+            <li><a href="Contact-us.html">Contact us</a></li>
+        </ul>
+    </div>
+
+    <!---Banner--->
+    <div class="banner">
+        <div class="discount">
+            <h1>ZAPATOS XMAS SALE</h1>
+            <h2>20% OFF</h2>
+        </div>
+    </div>
+
+
+
+    <!---NOT NEEDED, Just pushing the page down for an example until other pages are developed--->
+
+
+    <main>
+        <div class="flex-container">
+            <div class="big_img"><img src="img/Men Shoes/1.png"></div>
+            <div class="details">
+                
+                <div class="product_name"><h1>Product name</h1></div>
+                <div class="article_no"><p>1234312</p></div>
+                <div class="gender"><p>Female<p></div>
+                <div class="colour"><p>Colour<p></div>
+                <div class="prize"><h3>£99.99</h3></div>    
+
+                <form action="" method="get" class="form_details">
+                    <div class="size">
+                        
+                        <label for="size">Choose your size </label>
+                        <select name="cars" id="cars">
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                          </select>
+                    </div>  
+
+                      <div class="quantity">
+
+                        <label for="quantity">Quantity </label>
+                        <input type="number" id="quantity" name="quantity" min="1" max="10">
+                    
+                    </div>
+                    <div class="buttons">
+                        <button class="cart_button">Add to Cart</button><h5>or</h5>
+                        
+                        <button class="buy_now">Buy Now</button>
+                    </div>
+                  </form>
+            
+            </div> 
+            <div class="description"> <p>Put the description of the shoes here.</p></div> 
+          </div>
+
+    </main>
+
+    <!---HTML code for the entire footer--->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-columntop">
+                    <h1>HAVE ANY QUESTIONS?</h1>
+                    <p>Feel free to contact us as your feedback is valuable to us.</p>
+                    <a href="Contact-us.html"><button type="button">Contact Us</button></a>
+                </div>
+            </div>
+            <div class="footer-main">
+                <div class="footer-column">
+                    <h3 class="heading">QUICK LINKS</h3>
+                    <a href="home.html" class="footer-link">Home</a>
+                    <a href="About-us.html" class="footer-link">About</a>
+                    <a href="#" class="footer-link">Shop</a>
+                    <a href="Contact-us.html" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3 class="heading">EXTRA LINKS</h3>
+                    <a href="#" class="footer-link">Login</a>
+                    <a href="#" class="footer-link">Register</a>
+                    <a href="#" class="footer-link">Basket</a>
+                    <a href="#" class="footer-link">Orders</a>
+                </div>
+                <div class="footer-column">
+                    <h3 class="heading">CONTACT INFO</h3>
+                    <!--<img src="phone.png" alt="Phone icon">-->
+                    <a href="#" class="footer-link">
+                        <span class="material-icons md-18">phone</span>+1 23 456-7890</a>
+                    <a href="#" class="footer-link">
+                        <span class="material-icons md-18">phone</span>+111-222-3333</a>
+                    <a href="#" class="footer-link">
+                        <span class="material-icons md-18">email</span>Zapatos@outlook.com</a>
+                    <a href="#" class="footer-link">
+                        <span class="material-icons md-18">room</span>Birmingham, England</a>
+                </div>
+                <div class="footer-column">
+                    <h3 class="heading">FOLLOW US</h3>
+                    <a href="https://www.facebook.com/" class="footer-link">Facebook
+                        <a href="https://www.twitter.com/" class="footer-link">Twitter</a>
+                        <a href="https://www.instagram.com/" class="footer-link">Instagram</a>
+                        <a href="https://www.linkedin.com/" class="footer-link">LinkedIn</a>
+                </div>
+            </div>
+    </footer>
+
+</body>
+</html>
