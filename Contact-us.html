@@ -19,11 +19,33 @@
         </div>
         <div class="topNav">
             <ul>
-                <li><a href="log-in.html">Login/Sign Up</a></li>
+                <li><label for="click" class="click-me">Sign in</label></li>
+                <li><a href="customer-register.html">Register</a></li>
                 <li><a href="#"><i class="fa fa-shopping-cart" style="font-size:22px"></i></a></li>
             </ul>
         </div>
     </div>
+    
+    <!----Sign in popup---->
+    <div class="center">
+        <input type="checkbox" id="click">
+        <div class="content">
+            <div class="text">
+                SIGN IN TO ZAPATOS...
+            </div>
+            <label for="click" id="times">x</label>
+            <form>
+                <label for="username"><i class="fas fa-envelope"></i> Email</label>
+                <input type="text" placeholder="Email" id="user-email" required/>
+
+                <label for="password"><i class="fas fa-key"></i> Password</label>
+                <input type="password" placeholder="Password" id="user-password" required/>
+                <button>Sign In</button>
+                <h4><a href='customer-register.html'>Don't have an account?</a></h4>
+            </form>
+        </div>
+    </div>
+
     <!---HTML code for the nav bar--->
     <div class="navbar">
         <ul>
@@ -182,6 +204,7 @@
                 });
             }); </script>
     </section>
+    
     <!---HTML code for the entire footer--->
     <footer>
         <div class="footer-container">
@@ -189,7 +212,7 @@
                 <div class="footer-columntop">
                     <h1>HAVE ANY QUESTIONS?</h1>
                     <p>Feel free to contact us as your feedback is valuable to us.</p>
-                    <a href="Contact us.html"><button type="button">Contact Us</button></a>
+                    <a href="Contact-us.html"><button type="button">Contact Us</button></a>
                 </div>
             </div>
             <div class="footer-main">
@@ -203,7 +226,7 @@
                 <div class="footer-column">
                     <h3 class="heading">EXTRA LINKS</h3>
                     <a href="#" class="footer-link">Login</a>
-                    <a href="#" class="footer-link">Register</a>
+                    <a href="customer-register.html" class="footer-link">Register</a>
                     <a href="#" class="footer-link">Basket</a>
                     <a href="#" class="footer-link">Orders</a>
                 </div>
@@ -228,7 +251,6 @@
                 </div>
             </div>
     </footer>
-
 
 
 
