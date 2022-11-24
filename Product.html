@@ -37,21 +37,12 @@
       <li><a><button class="openbtn" onclick="openNav()"><img src="img/menu.png" width="25" height="25"></button></a></li>
         
   
-      <from action="" class="search-bar">
-        <input type="search" name="search" required autocomplete="off">
-        <button class=" search-button" type="submit"><spam></spam></button>
-       </from>
+   
   </ul>
 
 </div>
-
-
  
 <!-------------------------End Top NavBar Menu-------------------------------------------->
-
-
-
-
 
   <!----------------------------Start Side NavBar Menu ------------------------------------>
  
@@ -74,7 +65,7 @@
     <a href="Orders.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Orders</a>
     <br>
     <img src="img/add-user.png" width="25px" height="25" style="float:left">  
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Profile </a>
+    <a href="managment.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Profile </a>
     <br>
       <h6>Account Mangment</h6>
     <img src="img/logout.png" width="25px" height="25" style="float:left">  
@@ -91,18 +82,7 @@
     <br>
     </div>
 
-
-    
-
    <!----------------------------------------------- End Side NavBar Menu ----------------------------------------------------------->
-
-
-
-
-
-
-
-
 <!---------------------------------------------- Start Butoton Script ------------------------------------------------------------------------>
    <script>
 
@@ -167,7 +147,7 @@
   <br>
   <label for="currency-field">Enter Amount:</label>
     
-  <input type="text" name="currency-field" id="currency-field" pattern="^\d+(?:,\d{3})*\.\d{2}$"  pattern-invalid-message="Please wright the right format, Ex: 1000.50 | 1000 | 15 | 0.00"  data-type="currency" required  placeholder="$1,000,000.00">
+  <input type="currency" name="currency-field" id="currency-field"   data-type="currency" required="required" placeholder="£1,000,000.00">
     
 
 <label for="artical-number">Artical Number:</label>
@@ -202,9 +182,6 @@ myText.addEventListener("input", ()=> {
   document.getElementById("count_result").textContent = `Total chracters: ${count}`;
 });
 
-
-
-
     document.querySelectorAll('[pattern-invalid-message]')
     .forEach(input => {
         input.oninvalid = function(event) {
@@ -215,12 +192,44 @@ myText.addEventListener("input", ()=> {
         }
     })
 
+    var currencyInput = document.querySelector('input[type="currency"]')
+var currency = 'GBP' // https://www.currency-iso.org/dam/downloads/lists/list_one.xml
+
+ // format inital value
+onBlur({target:currencyInput})
+
+// bind event listeners
+currencyInput.addEventListener('focus', onFocus)
+currencyInput.addEventListener('blur', onBlur)
+
+
+function localStringToNumber( s ){
+  return Number(String(s).replace(/[^0-9.-]+/g,""))
+}
+
+function onFocus(e){
+  var value = e.target.value;
+  e.target.value = value ? localStringToNumber(value) : ''
+}
+
+function onBlur(e){
+  var value = e.target.value
+
+  var options = {
+      maximumFractionDigits : 2,
+      currency              : currency,
+      style                 : "currency",
+      currencyDisplay       : "symbol"
+  }
+  
+  e.target.value = (value || value === 0) 
+    ? localStringToNumber(value).toLocaleString(undefined, options)
+    : ''
+}
   
 </script>
 
 <!---------------------------------------------------  End Count/currency Script  -------------------------------------------------------------------------------------->
-
-
 
 <!---------------------------------------------- Start FileUpload Script ------------------------------------------------------------------------>
 <script>
