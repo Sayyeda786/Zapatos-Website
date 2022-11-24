@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
 
-<link id="admineStyle" href="sing.css" rel="stylesheet"/>
+<link id="admineStyle" href="sign.css" rel="stylesheet"/>
 
 <meta charset="utf-8" />
     <title>
@@ -24,8 +24,13 @@
    <input type="text" placeholder="Email or Phone" id="email" pattern="A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required 
    oninvalid="this.setCustomValidity('Enter Email Here Please')" oninput="this.setCustomValidity('')">
    <label for="password">Password</label>
-   <input type="password" placeholder="password" id="password"   required 
+   <input class="p" type="password" placeholder="password" id="password"   required 
    oninvalid="this.setCustomValidity('Enter Password  Here Please')" oninput="this.setCustomValidity('')">
+   <label for="cpassword">Confirm Password</label>
+   <input class="cp" type="password" placeholder="repeat password" id="cpassword" required 
+   onkeyup="Validate()"
+   oninvalid="this.setCustomValidity('Enter Same Password  Here Please')" oninput="this.setCustomValidity('')">
+
    <input type="checkbox" onclick="myFunction()">Show Password
 <script>
     function myFunction() {
@@ -36,8 +41,19 @@
     x.type = "password";
   }
 }
+    function Validate() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("cpassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+        
+            return false;
+        }
+        return true;
+    }
+   
 </script>
    <button class="btn-2">Register In</button> <div class="social">
-    <p>Do you want to <a href="admin-sing.html"> Login?</a></p>
+    <p>Do you want to <a href="admin-sign.html"> Login?</a></p>
    </div> </form>
    </body> </html> 
