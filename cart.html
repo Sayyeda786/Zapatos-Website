@@ -63,6 +63,68 @@ th:last-child{
     text-align: right;
 }
 
+/* css for billing and delivery */
+.billing{
+    width: 750px;
+    background-color: white;
+    
+    padding: 30px;
+    justify-content:center;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.container h1{
+    text-align: center;
+}
+
+.first-row{
+     display: flex;
+}
+
+.card_name{
+    width: 100%;
+    margin-right: 40px;
+}
+
+.input-field{
+    border: 1px solid #999;
+}
+
+.input-field input{
+    width: 100%;
+    border:none;
+    outline: none;
+    padding: 10px;
+}
+
+.selection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selection select{
+    padding: 10px 20px;
+}
+input[type=submit]{
+    background-color: #51087e;
+    width: 120px;
+    margin: auto;
+    font-weight: bold;
+    color: white;
+    margin-top: 5px;
+    
+}
+input[type=submit]:hover{
+    background-color: rgb(137, 169, 228);
+    transition: 0.5s ease;
+}
+
+.cards img{
+    width: 100px;
+    height: 70px;
+}
 
 </style>
 </head>
@@ -143,6 +205,96 @@ th:last-child{
         </div>
 
        </div>
+        <div class="billing">
+            <form action="" method="" class="payment_details">
+                <h1>Payment Details</h1>
+                <div class="first-row">
+                    <div class="card_name">
+                        <h3>Name on the card</h3>
+                        <div class="input-field">
+                            <input type="text" required="required">
+                        </div>
+                    </div>
+                    <div class="cvv">
+                        <h3>CVV</h3>
+                        <div class="input-field">
+                            <input type="password" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="second-row">
+                    <div class="card-number">
+                        <h3>Card Number</h3>
+                        <div class="input-field">
+                            <input type="number" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="third-row">
+                    <h3>Card Expiry</h3>
+                    <div class="selection">
+                        <div class="date">
+                            <select name="months" id="months">
+                                <option value="Jan">Jan</option>
+                                <option value="Feb">Feb</option>
+                                <option value="Mar">Mar</option>
+                                <option value="Apr">Apr</option>
+                                <option value="May">May</option>
+                                <option value="Jun">Jun</option>
+                                <option value="Jul">Jul</option>
+                                <option value="Aug">Aug</option>
+                                <option value="Sep">Sep</option>
+                                <option value="Oct">Oct</option>
+                                <option value="Nov">Nov</option>
+                                <option value="Dec">Dec</option>
+                              </select>
+                              <select name="years" id="years">
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                              </select>
+                        </div>
+                        <div class="cards">
+                            <img src="img/mc.png" alt="">
+                            <img src="img/vi.png" alt="">
+                            <img src="img/amex.jpg" alt="">
+                        </div>
+                    </div>    
+                </div>
+                <h1>Delivery Details</h1>
+                <div class="full_name">
+                    <h3>Full Name</h3>
+                    <div class="input-field">
+                        <input type="text" required="required">
+                    </div>
+                </div>
+                <div class="address">
+                    <h3>First line of Address</h3>
+                    <div class="input-field">
+                        <input type="text" required="required">
+                    </div>
+                </div>
+                <div class="first-row">
+                    <div class="City">
+                        <h3>City/Province</h3>
+                        <div class="input-field">
+                            <input type="text" required="required">
+                        </div>
+                    </div>
+                    <div class="postcode">
+                        <h3>PostCode</h3>
+                        <div class="input-field">
+                            <input type="text" required="required">
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" name="submit">
+            </form>
+        </div>
+        
 
     </main>
 
