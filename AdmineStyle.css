@@ -115,6 +115,87 @@ body{
       background-color: white;
       text-decoration: none;
     }
+    .edit{
+      background-color: green; /* Green */
+      border: none;
+      border-radius: 20px;
+      color: white;
+      padding: 10px 22px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .edit:hover{
+      background-color: darkgreen;
+    }
+    .delete{
+      background-color: rgb(217, 2, 2); /* Green */
+      border: none;
+      border-radius: 20px;
+      color: white;
+      padding: 10px 22px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  
+    .delete:hover{
+      background-color: #8f1212;
+    }
+    .form-popup {
+      display: none;
+      position: fixed;
+      top: 10%;
+      bottom: 10%;
+      left: 30%;
+      width: 600px;
+      padding-right: 3%;
+      border: 3px solid #4B49AC;
+      border-radius: 20px;
+      background-color: #98BDFF;
+      overflow-y: auto;
+    }
+    h4{
+        text-align: center;
+        font-size:xx-large;
+    }
+    /* Add styles to the form container */
+    .form-container {
+
+      padding: 10px;
+
+    }
+    
+    /* Set a style for the update/login button */
+    .form-container .btn {
+      background-color: #a162ed;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+    .form-container .btn:hover{
+
+      background-color: #4B49AC;
+    }
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+    .form-container .cancel:hover{
+      background-color: #8f1212;
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+    
     
     li a {
       display: block;
@@ -453,7 +534,7 @@ body{
   .table-body h1, h2{
     color: #000000;
   }
-  
+
   .table-body table {
     margin-left: auto;
     margin-right: auto;
@@ -482,7 +563,7 @@ body{
     cursor: pointer;
   }
   
-  .table-body .edit-btn {
+  /* .table-body .edit-btn {
     background-color: rgb(16, 197, 55); 
     color: white; 
   }
@@ -500,4 +581,4 @@ body{
   .table-body .del-btn:hover {
     background-color: #8f1212;
     color: white
-  }
+  } */

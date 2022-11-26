@@ -3,7 +3,8 @@
   <head>
 
 <link id="admineStyle" href="AdmineStyle.css" rel="stylesheet"/>
-
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 
 
 <meta charset="utf-8" />
@@ -22,7 +23,7 @@
         </button>
         <div class="dropdown-content">
           <a href="admin-sing.html"><img src="img/logout.png" width="25" height="25">Signout </a>
-          <a href="#"><img src="img/editing.png" width="25" height="25">Edite</a>
+          <a href="managment.html"><img src="img/editing.png" width="25" height="25">Edite</a>
         </div>
       </div>
         </a></li>
@@ -131,19 +132,18 @@
         <input type="text" placeholder="Email" id="email" pattern="A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required 
         oninvalid="this.setCustomValidity('Enter Email Here Please')" oninput="this.setCustomValidity('')">
         <label for="phone">Phone Number</label><br>
-      <input id="phone" placeholder="Phone Number" type="tel" name="phone" pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im"  required 
+      <input id="phone" placeholder="Phone Number" type="tel" name="phone"   required 
         oninvalid="this.setCustomValidity('Enter phone number Here Please')" oninput="this.setCustomValidity('')">
         <br>
     <label for="dropdown">Country</label>
     <br>
-      <script src="https://jsuites.net/v4/jsuites.js"></script>
-      <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+    
       <div id="dropdown"></div><br>
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password"   required 
+        <input type="password" placeholder="Password" name="password1" id="password"   required 
         oninvalid="this.setCustomValidity('Enter Password  Here Please')" oninput="this.setCustomValidity('')">
         <label for="cpassword">Confirm Password</label>
-        <input class="cp" type="password" placeholder="Repeat password" id="cpassword" required 
+        <input class="cp" type="password" placeholder="Repeat password" name="password2"  id="cpassword" required 
             onkeyup="Validate()"
             oninvalid="this.setCustomValidity('Enter Same Password  Here Please')" oninput="this.setCustomValidity('')">
         <br>
@@ -151,6 +151,18 @@
 
         <!----------------------------Script----------------------------->
      <script>
+function ansValidation(ev) {
+    ev.preventDefault
+    // there is no input named name
+    //var nameValue = document.getElementById("name").value
+
+    var passValue = document.getElementById("password").value
+    var confpassValue = document.getElementById("cpassword").value
+ if(passValue !== confpassValue) {
+       window.alert("Passwords do not match!")
+    }
+}
+
          function myFunction() {
        var x = document.getElementById("password");
        if (x.type === "password") {
@@ -423,7 +435,7 @@ jSuites.dropdown(document.getElementById('dropdown'), {
      </script>
      <!----------------------------Script----------------------------->
 
-  <input type="Submit" value="Update">
+  <input type="Submit" onclick="ansValidation(event)" value="Update">
     </div>
  
     </div>
