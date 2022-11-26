@@ -17,12 +17,9 @@ if (isset($_POST['login'])){
     if ($result>0){
       $row=mysqli_fetch_assoc($sql);
       $_SESSION['name'] =$row['a_username'];
-      $_SESSION['email'] =$row['a_email'];
-      
-    
+      $_SESSION['email'] =$row['a_email'];  
       header("Location:Admine.php");
-    }
-    else{
+    }else{
       ?>
       <div class="error">
         <h1> Oops.. your details are incorrect</h1>

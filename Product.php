@@ -1,20 +1,39 @@
 <?php
+@include 'config.php'; 
 
 session_start();
-$_SESSION['name'] =$row['a_username'];
-$_SESSION['email'] =$row['a_email'];
+if (isset($_POST['submit'])){
+ //$_SESSION['name'] =$row['a_username'];
+//$_SESSION['email'] =$row['a_email'];
 
 $PName =$_POST['PName'];
 $PGender =$_POST['PGender'];
 $PColor =$_POST['PColor'];
-$Pimage =$_POST['Pimage'];
+//$Pimage =$_POST['Pimage'];
+$PCurrency = $_POST['currency-field'];
 $Pdetails =$_POST['Pdetails'];
+$product_status = true;
+
+$imagefile = $_FILES['Pimage']['name'];
+$tempimage = $_FILES['Pimage']['tmp_name'];
+
+if ($PName=='' or $PGender=='' or $PColor=='' or $PCurrency='' or $imagefile=='' or $Pdetails=''){
+  echo"Script>alert('Please fill in all the fields')</script>";
+  exit();
+}else{
+  move_uploaded_file($tempimage,"./img/$imagefile");
+  $insert_prod= "INSERT INTO men_items(product_name, type, colour, description, cost, photo) VALUES ('$PName', '$PGender', '$PColor', '$Pdetails', '$PCurrency', '$imagefile')";
+ // $insert_prod = "insert into `men_items` (product_name, type, colour, description, cost, photo) values ('$PName', '$PGender', '$PColor', '$Pdetails', '$PCurrency', '$imagefile', NOW(),$product_status)";
+$result_query = mysqli_query($conn,$insert_prod);
+if($result_query){
+  echo"Script>alert('Success')</script>";
+}
+}
 
 
+}
 
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -35,36 +54,33 @@ $Pdetails =$_POST['Pdetails'];
 <div id="main" class="topbar">
   <ul>
     <div class="dropdown">
-    <li>    
-      <a href=""><button class="dropbtn"><img src="img/user.png" width="25" height="25"><i class="fa fa-caret-down"></i>
+      <li>    
+        <a href=""><button class="dropbtn"><img src="img/user.png" width="25" height="25"><i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <button type="button" class="btn" style="background-color: #98BDFF; " > <a href="adminlogout.php"><img src="img/logout.png" width="25" height="25">Signout </a></button>
+          <a href="#"><img src="img/editing.png" width="25" height="25">Edite</a>
+        </div>
+      </div>
+        </a></li>
+        <div class="dropdown">
+      <li><a href=""><button  class="dropbtn"><img src="img/world.png"  width="25" height="25"><i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="#"><img src="img/logout.png" width="25" height="25">Signout </a>
-        <a href="#"><img src="img/editing.png" width="25" height="25">Edite</a>
+        <a href="#"><img src="img/united-kingdom.png" width="25" height="25">English(UK)</a>
+        <a href="#"><img src="img/united-states.png" width="25" height="25">English(USA)</a>
       </div>
-    </div>
-      </a></li>
-      <div class="dropdown">
-    <li><a href=""><button  class="dropbtn"><img src="img/world.png"  width="25" height="25"><i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#"><img src="img/united-kingdom.png" width="25" height="25">English(UK)</a>
-      <a href="#"><img src="img/united-states.png" width="25" height="25">English(USA)</a>
-    </div>
-  </div> </a></li>
-    
-    <li><a><button class="openbtn" onclick="openNav()"><img src="img/menu.png" width="25" height="25"></button></a></li>
+    </div> </a></li>
+      
+      <li><a><button class="openbtn" onclick="openNav()"><img src="img/menu.png" width="25" height="25"></button></a></li>
+        
+  
    
   </ul>
+
 </div>
-
-
  
 <!-------------------------End Top NavBar Menu-------------------------------------------->
-
-
-
-
 
   <!----------------------------Start Side NavBar Menu ------------------------------------>
  
@@ -75,44 +91,30 @@ $Pdetails =$_POST['Pdetails'];
     <br>
     <hr class="horizontal light mt-0 mb-2">
     <img src="img/dashboard.png"  width="25" height="25" style="float:left"> 
-   <a href="Admine.html" style="text-decoration: none ;"><i class="fa fa-fw fa-home" style="float: right;"></i> Dashboard</a>
+   <a href="Admine.php" style="text-decoration: none ;"><i class="fa fa-fw fa-home" style="float: right;"></i> Dashboard</a>
     <br>
     <img src="img/shoe-shop.png" width="25px" height="25" style="float:left">  
-    <a href="Avalibilty.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Avaliblity</a>
+    <a href="Avalibilty.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Availability</a>
     <br>
     <img src="img/cv.png" width="25px" height="25" style="float:left">  
     <a href="Product.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Add Products</a>
     <br>
+    <img src="img/orders-icon.png" width="25px" height="25" style="float:left">  
+    <a href="Orders.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Orders</a>
+    <br>
     <img src="img/add-user.png" width="25px" height="25" style="float:left">  
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Profile </a>
+    <a href="managment.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Profile </a>
     <br>
       <h6>Account Mangment</h6>
     <img src="img/logout.png" width="25px" height="25" style="float:left">  
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Sing out</a>
+    <a href="adminlogout.php" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Sign out</a>
     <br>
     <img src="img/logout.png" width="25px" height="25" style="float:left">  
     <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Editor</a>
     <br>
-    <img src="img/logout.png" width="25px" height="25" style="float:left">  
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Sing out</a>
-    <br>
-    <img src="img/logout.png" width="25px" height="25" style="float:left"> 
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Sing out</a>
-    <br>
     </div>
 
-
-    
-
    <!----------------------------------------------- End Side NavBar Menu ----------------------------------------------------------->
-
-
-
-
-
-
-
-
 <!---------------------------------------------- Start Butoton Script ------------------------------------------------------------------------>
    <script>
 
@@ -135,7 +137,7 @@ $Pdetails =$_POST['Pdetails'];
 
 
 <!---------------------------------------------------  Product Form  -------------------------------------------------------------------------------------->
-<form action="info.php" method="post">
+<form action="" method="post" enctype="multipart/form-data">
 
     <div class="Content">
     <div class="product-content">
@@ -156,7 +158,7 @@ $Pdetails =$_POST['Pdetails'];
             <label for="Kids">Kids</label><br>
 
 
-            <p>Product-Color:</p>
+            <label for="PColor">Product-Color:</label>
             <div class="search_categories" >
             <div class="select" >
             <select class="search_categories" id="color" name="PColor" required
@@ -175,7 +177,14 @@ $Pdetails =$_POST['Pdetails'];
           </div>
         </div>
   <br>
+  <label for="currency-field">Enter Amount:</label>
+    
+  <input type="currency" name="currency-field" id="currency-field"   data-type="currency" required="required" placeholder="£1,000,000.00">
+    
 
+<label for="artical-number">Artical Number:</label>
+<input type="text" name="artical-number" id="artical-number" required placeholder="Artical-number" 
+oninvalid="this.setCustomValidity('Please wrigth artical-number')" oninput="this.setCustomValidity('')">
   <label for="PColor">Product-image:</label>
   <input class="custom-file-input" type="file" id="Product-image" name="Pimage" onchange="loadFile(event)" accept="img/png,img/jpg" required 
   oninvalid="this.setCustomValidity('Please Upload image')" oninput="this.setCustomValidity('')">
@@ -185,9 +194,11 @@ $Pdetails =$_POST['Pdetails'];
 
   <textarea id="Product-details" name="Pdetails" placeholder="Write Details Of Product"  rows="4" cols="50" minlength="10" required 
   oninvalid="this.setCustomValidity('Enter Product details Here')" oninput="this.setCustomValidity('')"></textarea>
+<p id="count_result">Total chracters : 0 </p>
 
-  <input type="Submit" value="Submit">
+  <input type="Submit" value="Submit" name="submit">
     </div>
+ 
     </div>
     </div>
 </form>
@@ -195,10 +206,62 @@ $Pdetails =$_POST['Pdetails'];
 
 <!---------------------------------------------------  Product Form  -------------------------------------------------------------------------------------->
 
+<!--------------------------------------------------- Start Count/currency Script  -------------------------------------------------------------------------------------->
+<script>
+let myText = document.getElementById("Product-details");
+myText.addEventListener("input", ()=> {
+  let count = (myText.value).length;
+  document.getElementById("count_result").textContent = `Total chracters: ${count}`;
+});
+
+    document.querySelectorAll('[pattern-invalid-message]')
+    .forEach(input => {
+        input.oninvalid = function(event) {
+            let invalidMessage = event.target.getAttribute('pattern-invalid-message');
+            if (invalidMessage) {
+                event.target.setCustomValidity(invalidMessage);
+            }
+        }
+    })
+
+    var currencyInput = document.querySelector('input[type="currency"]')
+var currency = 'GBP' // https://www.currency-iso.org/dam/downloads/lists/list_one.xml
+
+ // format inital value
+onBlur({target:currencyInput})
+
+// bind event listeners
+currencyInput.addEventListener('focus', onFocus)
+currencyInput.addEventListener('blur', onBlur)
 
 
+function localStringToNumber( s ){
+  return Number(String(s).replace(/[^0-9.-]+/g,""))
+}
 
+function onFocus(e){
+  var value = e.target.value;
+  e.target.value = value ? localStringToNumber(value) : ''
+}
 
+function onBlur(e){
+  var value = e.target.value
+
+  var options = {
+      maximumFractionDigits : 2,
+      currency              : currency,
+      style                 : "currency",
+      currencyDisplay       : "symbol"
+  }
+  
+  e.target.value = (value || value === 0) 
+    ? localStringToNumber(value).toLocaleString(undefined, options)
+    : ''
+}
+  
+</script>
+
+<!---------------------------------------------------  End Count/currency Script  -------------------------------------------------------------------------------------->
 
 <!---------------------------------------------- Start FileUpload Script ------------------------------------------------------------------------>
 <script>
