@@ -1,31 +1,12 @@
+<?php
+include 'config.php';
+ session_start();
 
-
-
-
-
-
-
-
-
-
-
-<!----------------------------------------------------------- PHP ENDS --------------------------------------------------------------------->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if (!isset($_SESSION['name'])){
+  header("location: admin-sign.php");
+  exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +19,7 @@
 
     </title>
     <body>
+    <h1> Welcome <?php echo $_SESSION['name'] ?></h1><br> 
   </head>
 
   <!----------------------- Start Top NavBar Menu ----------------------------------->
@@ -49,8 +31,8 @@
       <a href=""><button class="dropbtn"><img src="img/user.png" width="25" height="25"><i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="#"><img src="img/logout.png" width="25" height="25">Signout </a>
-        <a href="#"><img src="img/editing.png" width="25" height="25">Edite</a>
+        <a href="adminlogout.php"><img src="img/logout.png" width="25" height="25">Signout </a>
+        <a href="#"><img src="img/editing.png" width="25" height="25">Edit</a>
       </div>
     </div>
       </a></li>
@@ -82,13 +64,16 @@
     <br>
     <hr class="horizontal light mt-0 mb-2">
     <img src="img/dashboard.png"  width="25" height="25" style="float:left"> 
-   <a href="Admine.html" style="text-decoration: none ;"><i class="fa fa-fw fa-home" style="float: right;"></i> Dashboard</a>
+   <a href="Admine.php" style="text-decoration: none ;"><i class="fa fa-fw fa-home" style="float: right;"></i> Dashboard</a>
     <br>
     <img src="img/add-user.png" width="25px" height="25" style="float:left">  
-    <a href="Avalibilty.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Avaliblity </a>
+    <a href="Avalibilty.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Availability </a>
     <br>
     <img src="img/shoe-shop.png" width="25px" height="25" style="float:left">  
     <a href="Product.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Add Products</a>
+    <br>
+    <img src="img/orders-icon.png" width="25px" height="25" style="float:left">  
+    <a href="Orders.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Orders</a>
     <br>
     <img src="img/cv.png" width="25px" height="25" style="float:left">  
     <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Profile</a>
@@ -96,16 +81,10 @@
    
       <h6>Account Mangment</h6>
     <img src="img/logout.png" width="25px" height="25" style="float:left">  
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Sing out</a>
+    <a href="adminlogout.php" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Sign out</a>
     <br>
     <img src="img/logout.png" width="25px" height="25" style="float:left">  
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Editor</a>
-    <br>
-    <img src="img/logout.png" width="25px" height="25" style="float:left">  
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Sing out</a>
-    <br>
-    <img src="img/logout.png" width="25px" height="25" style="float:left"> 
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Sing out</a>
+    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Edit</a>
     <br>
     </div>
 

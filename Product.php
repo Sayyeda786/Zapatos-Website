@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+$_SESSION['name'] =$row['a_username'];
+$_SESSION['email'] =$row['a_email'];
+
 $PName =$_POST['PName'];
 $PGender =$_POST['PGender'];
 $PColor =$_POST['PColor'];
@@ -7,20 +11,6 @@ $Pimage =$_POST['Pimage'];
 $Pdetails =$_POST['Pdetails'];
 
 
-// connect my database
-
-$conn = new mysqli('localhost','root',' ');
-if($conn->connect_error){
-    die('Connection Fiald : ' .$conn->connect_error);
-}else{
-    $stmt = $conn->prepare("insert into registration(PName,PGender,PColor,Pimage,Pdetails)
-    values(?,?,?,?,?)");
-    $stmt->bind_param("sssssi",$PName,$PGender,$PColor,$Pimage,$Pdetails);
-    $stmt->execute();
-    echo "Submition Successfully..... ";
-    $stmt->close();
-    $conn->close();
-}
 
 ?>
 
@@ -198,7 +188,6 @@ if($conn->connect_error){
 
   <input type="Submit" value="Submit">
     </div>
- 
     </div>
     </div>
 </form>

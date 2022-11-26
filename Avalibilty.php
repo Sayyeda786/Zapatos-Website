@@ -1,37 +1,5 @@
 
 
-
-<?php
-$connection = mysql_connect("localhost","root"," ");
-$db = mysql_select_db("Database name",$connection);
-$query = mysql_query("SELECT id,PName,Pimage,PGender from table_name", $connection);
-if(mysql_num_row($query)>0){
-    while($row = mysql_fitch_assoc($query)){
-        echo " id : " .$row["id"]. " PName : " .$row["PName"]. " Pimage : " .$row["Pimage"]. " PGender : " .$row["PGender"]. "<br>";
-    }
-} else{
-    echo " 0 results";
-}
-
-
-mysqli_close($conn);
-
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
