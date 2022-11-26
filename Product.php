@@ -59,7 +59,7 @@ if($result_query){
         </button>
         <div class="dropdown-content">
           <button type="button" class="btn" style="background-color: #98BDFF; " > <a href="adminlogout.php"><img src="img/logout.png" width="25" height="25">Signout </a></button>
-          <a href="#"><img src="img/editing.png" width="25" height="25">Edite</a>
+          <a href="managment.html"><img src="img/editing.png" width="25" height="25">Edit profile</a>
         </div>
       </div>
         </a></li>
@@ -94,10 +94,10 @@ if($result_query){
    <a href="Admine.php" style="text-decoration: none ;"><i class="fa fa-fw fa-home" style="float: right;"></i> Dashboard</a>
     <br>
     <img src="img/shoe-shop.png" width="25px" height="25" style="float:left">  
-    <a href="Avalibilty.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Availability</a>
+    <a href="Avalibilty.php" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Availability</a>
     <br>
     <img src="img/cv.png" width="25px" height="25" style="float:left">  
-    <a href="Product.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Add Products</a>
+    <a href="Product.php" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Add Products</a>
     <br>
     <img src="img/orders-icon.png" width="25px" height="25" style="float:left">  
     <a href="Orders.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Orders</a>
@@ -110,7 +110,7 @@ if($result_query){
     <a href="adminlogout.php" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Sign out</a>
     <br>
     <img src="img/logout.png" width="25px" height="25" style="float:left">  
-    <a href="" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Editor</a>
+    <a href="managment.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Edit profile</a>
     <br>
     </div>
 
