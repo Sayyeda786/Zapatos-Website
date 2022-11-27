@@ -100,7 +100,7 @@ if($result_query){
     <a href="Product.php" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Add Products</a>
     <br>
     <img src="img/orders-icon.png" width="25px" height="25" style="float:left">  
-    <a href="Orders.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Orders</a>
+    <a href="Orders.php" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Orders</a>
     <br>
     <img src="img/add-user.png" width="25px" height="25" style="float:left">  
     <a href="managment.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Profile </a>

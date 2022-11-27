@@ -15,8 +15,7 @@ if (!isset($_SESSION['name'])){
 <link id="admineStyle" href="AdmineStyle.css" rel="stylesheet"/>
 
 <meta charset="utf-8" />
-    <title>
-
+    <title>Admin Dashboard
     </title>
     <body>
     <h1> Welcome <?php echo $_SESSION['name'] ?></h1><br> 
@@ -73,7 +72,7 @@ if (!isset($_SESSION['name'])){
     <a href="Product.php" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Add Products</a>
     <br>
     <img src="img/orders-icon.png" width="25px" height="25" style="float:left">  
-    <a href="Orders.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Orders</a>
+    <a href="Orders.php" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Orders</a>
     <br>
     <img src="img/cv.png" width="25px" height="25" style="float:left">  
     <a href="managment.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Profile</a>
@@ -124,7 +123,10 @@ if (!isset($_SESSION['name'])){
 
         if ($result ->num_rows >0){
           while($row = $result-> fetch_assoc()){
-            echo "<tr><td>" . $row["c_id"] ."<tr><td>" . $row["c_email"] . "</tr></td>";
+            echo "<tr>
+            <td>" . $row["c_id"] ."</td>
+            <td>" . $row["c_email"] . "</td>
+            </tr>";
           }
         }
         else{
@@ -132,7 +134,6 @@ if (!isset($_SESSION['name'])){
         }
         ?>
         <tbody>
-     
         </tbody>
         <tfoot>
         </tfoot>
@@ -142,8 +143,10 @@ if (!isset($_SESSION['name'])){
   <div class="column">
     <div class="card">
       <h2>Shoe trends currently:</h2>
-      <p> converse </p>
+      <p> Converse </p>
       <p> Vans </p>
+      <p> Crocs </p>
+      <p> Nikes </p>
     </div>
   </div>
   <div class="column">

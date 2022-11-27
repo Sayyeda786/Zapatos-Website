@@ -1,9 +1,6 @@
 <?php
-include 'config.php';
+include 'config.php'
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,7 +24,7 @@ include 'config.php';
       </button>
       <div class="dropdown-content">
         <a href="adminlogout.php"><img src="img/logout.png" width="25" height="25">Signout </a>
-        <a href="managment.html"><img src="img/editing.png" width="25" height="25">Edit</a>
+        <a href="managment.html"><img src="img/editing.png" width="25" height="25">Edit profile</a>
       </div>
     </div>
       </a></li>
@@ -71,10 +68,10 @@ include 'config.php';
     <a href="Product.php" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Add Products</a>
     <br>
     <img src="img/orders-icon.png" width="25px" height="25" style="float:left">  
-    <a href="Orders.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Orders</a>
+    <a href="Orders.php" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i>Orders</a>
     <br>
     <img src="img/cv.png" width="25px" height="25" style="float:left">  
-    <a href="managment.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Profile</a>
+    <a href="managment.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Profile </a>
     <br>
    
       <h6>Account Mangment</h6>
@@ -84,7 +81,7 @@ include 'config.php';
     <img src="img/logout.png" width="25px" height="25" style="float:left">  
     <a href="managment.html" style="text-decoration: none ;"><i class="fa fa-fw fa-wrench" style="float: rigth;"></i> Edit profile</a>
     <br>
-
+   
     </div>
 
 
@@ -116,130 +113,57 @@ include 'config.php';
 
 <!------------------------------------------------   Main Body   ------------------------------------------------------------------------->
 
-<div id="avail-body" class="table-body">
-    <h1>Products</h1>
-    <h2>Mens</h2>
-    <table id="mens-table">
-        <tr>
-            <th>Article No.</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Colour</th>
-            <th>Description</th>
-            <th>Cost (£)</th>
-            <th>Image </th>
-        </tr>
-<?php
-$sql = "SELECT * from men_items";
-$result = $conn -> query($sql);
-  if ($result ->num_rows >0){
-    while($row = $result-> fetch_assoc()){
-      echo "<tr>
-      <td>" .$row["article_no"] . " </td>
-      <td>" .$row["product_name"] . " </td>
-      <td>" .$row["type"] . " </td>
-      <td>" .$row["colour"] . " </td>
-      <td>" .$row["description"] . "</td>
-      <td>" .$row["cost"] . " </td>" ?>
-      <td>
-              <a target="_blank" class="button edit-btn"> <input type="button" class="edit" onclick="openForm()" value="Edit">
-                <a target="_blank" class="button del-btn"> <input type="button" class="delete" onclick="confirmation()" value="Delete"></a>
-            </td>
-      </tr>
-      
-      <?php
-      
-          }
-        }
-        else{
-          echo "No products found";
-        }
-        ?>
-        <!-- <td>
-              <a target="_blank" class="button edit-btn"> <input type="button" class="edit" onclick="openForm()" value="Edit">
-                <a target="_blank" class="button del-btn"> <input type="button" class="delete" onclick="confirmation()" value="Delete"></a>
-            </td> -->
 
-    </table>
-
-    <h2>Womens</h2>
-    <table id="womens-table">
+<div id="orders-body" class="table-body">
+    <h1>Order History</h1>
+    <table id="orders-table">
         <tr>
-            <th>Name</th>
+            <th>Order No.</th>
             <th>Article No.</th>
-            <th>Type</th>
-            <th>Colour</th>
-            <th>Description</th>
-            <th>Cost (£)</th>
+            <th>Product name</th>
+            <th>Customer ID</th>
+            <th>Cost</th>
             <th></th>
         </tr>
-<?php
-$sql = "SELECT * from women_items";
-$result = $conn -> query($sql);
-  if ($result ->num_rows >0){
-    while($row = $result-> fetch_assoc()){
-      echo "<tr>
-      <td>" .$row["article_no"] . " </td>
-      <td>" .$row["product_name"] . " </td>
-      <td>" .$row["type"] . " </td>
-      <td>" .$row["colour"] . " </td>
-      <td>" .$row["description"] . "</td>
-      <td>" .$row["cost"] . " </td>" ?>
-      <td>
-              <a target="_blank" class="button edit-btn"> <input type="button" class="edit" onclick="openForm()" value="Edit">
-                <a target="_blank" class="button del-btn"> <input type="button" class="delete" onclick="confirmation()" value="Delete"></a>
-            </td>
-      </tr>
-      
-      <?php
-      
-          }
-        }
-        else{
-          echo "No products found";
-        }
-        ?>
-    </table>
 
-    <h2>Kids</h2>
-    <table id="kids-table">
-        <tr>
-            <th>Name</th>
-            <th>Article No.</th>
-            <th>Type</th>
-            <th>Colour</th>
-            <th>Description</th>
-            <th>Cost (£)</th>
-            <th></th>
-        </tr>
+        <!--THESE ARE PLACEHOLDERS, PLEASE REMOVE FOR BACKEND IMPLEMENTATION-->
+        <!-- Whoevers doing the backend for this, use these as just a template for when you make it actually reflect the database -->
 <?php
-$sql = "SELECT * from kids_items";
+$sql = "SELECT * from orders";
 $result = $conn -> query($sql);
   if ($result ->num_rows >0){
     while($row = $result-> fetch_assoc()){
-      echo "<tr>
-      <td>" .$row["article_no"] . " </td>
-      <td>" .$row["product_name"] . " </td>
-      <td>" .$row["type"] . " </td>
-      <td>" .$row["colour"] . " </td>
-      <td>" .$row["description"] . "</td>
-      <td>" .$row["cost"] . " </td>" ?>
-      <td>
-              <a target="_blank" class="button edit-btn"> <input type="button" class="edit" onclick="openForm()" value="Edit">
-                <a target="_blank" class="button del-btn"> <input type="button" class="delete" onclick="confirmation()" value="Delete"></a>
-            </td>
-      </tr>
+      ?>
+        <tr>
+            <td><?php echo $row["o_id"] ?> </td>
+            <td><?php echo $row["article_no."] ?></td>
+            <td><?php echo $row["order_prod"] ?></td>
+            <td><?php
+$sqls = "SELECT c_email from orders";
+$cresult = $conn -> query($sqls);
+  if ($cresult ->num_rows >0){
+    while($row = $cresult-> fetch_assoc()){
+       echo $row["c_email"] ?></td><?php
       
-      <?php
+      }
+    }
+    else{
+      echo "No products found";
+    }
+    ?>
+        </tr>
+        <?php
       
-          }
-        }
-        else{
-          echo "No products found";
-        }
-        ?>
+    }
+  }
+  else{
+    echo "No products found";
+  }
+  ?>
+        <!-- End of Examples -->
     </table>
 </div>
+
 
 <!----------------------------------------------Popup for edit----------------------------------------------------------->
 <div class="form-popup" id="myForm">
@@ -308,7 +232,6 @@ oninvalid="this.setCustomValidity('Please wrigth artical-number')" oninput="this
 <!----------------------------------------------Popup for edit----------------------------------------------------------->
 
 <!------------------------------------------------   Main Body   ------------------------------------------------------------------------->
-
 <script>
   function openForm() {
   document.getElementById("myForm").style.display = "block";
@@ -322,8 +245,6 @@ function confirmation(){
 
   var result = confirm("Are you sure you want to delete ?")
 }
-
-
 </script>
 </body>
 </html>
