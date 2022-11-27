@@ -71,7 +71,7 @@ if (isset($_POST['login'])){
 }
 </script>
 <input type="submit" class="btn-2" value="Login" name="login">
-   <!-- <button class="btn-2">Log In</button> <div class="social"> -->
+   <!-- <button class="btn-2">Log In</button> --><div class="social">
     <p>Do you want to <a href="register.php"> Register?</a></p>
    </div> </form>
    </body> </html> 

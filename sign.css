@@ -54,13 +54,13 @@ Top: 50%;
         width: 100%;
         margin-bottom: 2.5px;
         background-color: rgba(255,255, 255, 0.07); border-radius: 3px; padding: 0 10px; margin-top: 8px; font-size: 14px; font-weight: 300;}
-        button{
+          input[type=submit]{
         margin-top: 20px;
         width: 100%;
         background-color: #98BDFF;
         color: #080710;
         padding: 15px 0; font-size: 18px; font-weight: 600; border-radius: 5px; cursor:pointer }
-        button:hover{
+        input[type=submit]:hover{
             background-color: #4B49AC;
         }
         input[type=checkbox] {
@@ -129,4 +129,27 @@ Top: 50%;
           
   form p .err{
     color: #b72d2d;
+  }
+
+  .pass-strenght{
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+  }
+  .strenght.lable{
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .strenght.precent{
+    flex: 1;
+    height: 5px;
+    border-radius: 10px;
+    display: block ;
+    background: #eee;
+  }
+  .strenght.precent span{
+    display: block;
+    height: 10px;
+    transition: all 0.4s;
+    border-radius: 10px;
   }
