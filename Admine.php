@@ -97,10 +97,12 @@ if (!isset($_SESSION['name'])){
 
 <!---------------------------------------------------  Dashboard   -------------------------------------------------------------------------------------->
 
-<dvi  class="row">
+<div  class="row">
   <div class="column">
 
-    <div class="card">........................
+    <div class="card">
+      <h2>Target customer goal for month</h2><br>
+      <h1> 40 </h1>
     </div>
   </div>
   <div class="column">
@@ -110,84 +112,50 @@ if (!isset($_SESSION['name'])){
     <div class="card">
       <table>
         <thead>
+          <h2> List of customers</h2>
           <tr>
-            <th scope="col" >Item</th>
-            <th scope="col">Avaliblity</th>
-            <th scope="col">Qty</th>
-            <th scope="col">Price</th>
+            <th scope="col" >User id</th>
+            <th scope="col">Email</th>
           </tr>
         </thead>
+        <?php
+        $sql = "SELECT * from customers";
+        $result = $conn -> query($sql);
+
+        if ($result ->num_rows >0){
+          while($row = $result-> fetch_assoc()){
+            echo "<tr><td>" . $row["c_id"] ."<tr><td>" . $row["c_email"] . "</tr></td>";
+          }
+        }
+        else{
+          echo "No customers found";
+        }
+        ?>
         <tbody>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
-          <tr>
-            <td>Product Name</td>
-            <td>In Stock</td>
-            <td>1</td>
-            <td>$30</td>
-          </tr>
+     
         </tbody>
         <tfoot>
-          <tr>
-            <td colspan="3">Subtotal</td>
-            <td>$135.36</td>
-          </tr>
-          <tr>
-            <td colspan="3">Tax</td>
-            <td>$135.36</td>
-          </tr>
-          <tr>
-            <td colspan="3">Total</td>
-            <td>$135.36</td>
-          </tr>
         </tfoot>
       </table>
     </div>
   </div>
   <div class="column">
-    <div class="card">..</div>
+    <div class="card">
+      <h2>Shoe trends currently:</h2>
+      <p> converse </p>
+      <p> Vans </p>
+    </div>
   </div>
   <div class="column">
     <div class="card">  <h4>Pie Chart For product interactivity</h4>
       <div class="chart"></div></div>
   </div>
-  <div class="column">
-    <div class="card">..</div>
-  </div>
-  <div class="column">
-    <div class="card">..</div>
-  </div>
-  <div class="column">
-    <div class="card">
-      .................................
 
-    
-  
 
-    </div>
+
   </div>
 
 </div>
-
-
-
-
 
 
 
