@@ -452,32 +452,28 @@ body{
     transition-duration: 1.5s;
   }
   
-  .column {
-    float: right;
-    width: 43.5%;
-    padding:  10px;
-  
-  
-  
+   .main--container{
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(auto-fit,500px);
+   place-content: center;
+   gap: 30px;
   }
-  .row {margin: 0 -5px;
-  
-  
+  .card{
+border-radius: 10px;
+background-color: #98BDFF;
+box-shadow: 0 5px 10px -3px ;
+grid-template-columns: repeat(3,500px);
   }
-  .row ::after{
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .card {
-    box-shadow:0 14px 18px 0 #4B49AC;  /* this adds the "card" effect */
-    padding: 16px;
-    text-align: center;
-    border-radius: 10px;
-   background-color: #98BDFF;
-  
-  
-  }
+img{
+
+border-top-left-radius:4px;
+border-top-right-radius:4Dx;
+}
+article{
+padding: 1em;
+}
+
   .search_categories{
     font-size: 13px;
     padding: 10px 8px 10px 14px;
