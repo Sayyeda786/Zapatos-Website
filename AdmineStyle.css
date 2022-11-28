@@ -452,27 +452,28 @@ body{
     transition-duration: 1.5s;
   }
   
-   .main--container{
-   width: 100%;
-   display: grid;
-   grid-template-columns: repeat(auto-fit,500px);
-   place-content: center;
-   gap: 30px;
-  }
-  .card{
-border-radius: 10px;
-background-color: #98BDFF;
-box-shadow: 0 5px 10px -3px ;
-grid-template-columns: repeat(3,500px);
-  }
-img{
-
-border-top-left-radius:4px;
-border-top-right-radius:4Dx;
-}
-article{
-padding: 1em;
-}
+  .main--container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,500px);
+    place-content: center;
+    gap: 30px;
+   }
+   .card{
+ border-radius: 10px;
+ background-color: #98BDFF;
+ box-shadow: 0 5px 10px -3px ;
+ grid-template-columns: repeat(3,500px);
+   }
+ img{
+ 
+ border-top-left-radius:4px;
+ border-top-right-radius:4Dx;
+ }
+ article{
+ padding: 1em;
+ }
+ 
 
   .search_categories{
     font-size: 13px;
