@@ -138,8 +138,12 @@ $result = $conn -> query($sql);
       <td>" .$row["product_name"] . " </td>
       <td>" .$row["type"] . " </td>
       <td>" .$row["colour"] . " </td>
-      <td>" .$row["description"] . "</td>
-      <td>" .$row["cost"] . " </td>
+      <td>" .$row["cost"] . "</td>
+      <td>" .$row["description"] . " </td>
+      <td>
+            <a target='_blank' class='button edit-btn'> <input type='button' class='edit' onclick='openForm()' value='Edit'>
+            <a target='_blank' class='button del-btn'> <input type='button' class='delete' onclick='confirmation()' value='Delete'></a>
+      </td>
       </tr>";
           }
         }
@@ -147,36 +151,6 @@ $result = $conn -> query($sql);
           echo "No products found";
         }
         ?>
-        <td>
-              <a target="_blank" class="button edit-btn"> <input type="button" class="edit" onclick="openForm()" value="Edit">
-                <a target="_blank" class="button del-btn"> <input type="button" class="delete" onclick="confirmation()" value="Delete"></a>
-            </td>
-
-        <!--THESE ARE PLACEHOLDERS, PLEASE REMOVE FOR BACKEND IMPLEMENTATION-->
-        <!-- Whoevers doing the backend for this, use these as just a template for when you make it actually reflect the database -->
-        <tr>
-            <td>Foo Bar</td>
-            <td>0</td>
-            <td>Mens</td>
-            <td>Black</td>
-            <td>69.00</td>
-            <td>
-              <a target="_blank" class="button edit-btn"> <input type="button" class="edit" onclick="openForm()" value="Edit">
-                <a target="_blank" class="button del-btn"> <input type="button" class="delete" onclick="confirmation()" value="Delete"></a>
-            </td>
-        </tr>
-        <tr>
-            <td>Testy Test</td>
-            <td>1</td>
-            <td>Mens</td>
-            <td>White</td>
-            <td>42.00</td>
-            <td>
-              <a target="_blank" class="button edit-btn"> <input type="button" class="edit" onclick="openForm()" value="Edit">
-                <a target="_blank" class="button del-btn"> <input type="button" class="delete" onclick="confirmation()" value="Delete"></a>
-            </td>
-        </tr>
-        <!-- End of Examples -->
     </table>
 
     <h2>Womens</h2>
