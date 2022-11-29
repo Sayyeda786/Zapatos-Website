@@ -717,6 +717,26 @@ form .user-details .input-box {
   max-height: 300px;
 }
 
+/*CONTACT-US PAGE*/
+
+/*ORDER-CONFIRMATION PAGE*/
+
+.order-confirm{
+  margin: 20vh;
+}
+.order-confirm h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.order-confirm-text p {
+  text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  font-size: 1.1rem;
+  margin-bottom: 3.8rem;
+}
 
 @media only screen and (max-width: 768px) {
   .footer-main {
