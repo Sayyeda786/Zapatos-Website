@@ -25,12 +25,19 @@ if (isset($_POST['update'])){
   $newusername = $_POST['username'];
   $newuseremail = $_POST['useremail'];
   $newpassword = $_POST['password1'];
+
+  
+  $samename = "SELECT * from admins WHERE a_username = '$newusername'";
+  $samequery = mysqli_query($conn, $samename);
+  $samerow=mysqli_fetch_array($samequery);
   
 
   if ($newusername=='' or $newuseremail=='' or $newpassword==''){
     header('Location:Admine.php');
     echo"<script>alert('No details changed.')</script>";
     exit();
+  }elseif($samerow){
+    echo"<script>alert('This username is already taken, try again.')</script>";
   }
   else{
   
@@ -46,7 +53,9 @@ if (isset($_POST['update'])){
    
     echo "Details changes successfully";
     header('Location:Admine.php');
-  }
+  }else{
+    header('Location:Admine.php');
+}
 }
 ?>
 
