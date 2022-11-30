@@ -38,7 +38,7 @@ $sql = "SELECT * from admins WHERE a_username = '$sessionName'";
       <div class="dropdown-content">
         <a href="adminlogout.php"><img src="img/logout.png" width="25" height="25">Signout </a>
         <!-- <a href="managment.php?id=<?=$_SESSION['name'];?>&type=<?=$row['a_id'];?>"><img src="img/editing.png" width="25" height="25">Edit profile</a> -->
-        <a href="managment.php?type=<?=$row['a_id'];?>"><img src="img/editing.png" width="25" height="25">Edit profile</a> -->
+        <a href="managment.php?id=<?=$_SESSION['name'];?>&type=<?=$row['a_id'];?>"><img src="img/editing.png" width="25" height="25">Edit profile</a> -->
       </div>
     </div>
       </a></li>
@@ -101,20 +101,36 @@ $sql = "SELECT * from admins WHERE a_username = '$sessionName'";
 
 
 <!---------------------------------------------------  Dashboard   -------------------------------------------------------------------------------------->
-<div  class="row">
-  <div class="column">
 
-    <div class="card">
+   
+
+
+<section class="main--container">
+  <article class= "card">
+      <article class= "content">
+      <h3> </h3>
+      <p>
       <h2>Target customer goal for month</h2><br>
-      <h1> 40 </h1>
-    </div>
-  </div>
-  <div class="column">
-    <div class="card"><table>
+      <h2>20 men</h2><br>
+      <h2>10 women</h2><br>
+      <h2>10 kids</h2><br>
+      </p>
+      </article>
+      <!--content--article-ends-here--->
+      </article>
+   
+      </article>
+          <article class= "card">
+              
+
+              <article class= "content">
+              <h3»Title</h3>
+              <p>
+              <table>
         <thead>
           <h2> List of admins</h2>
           <tr>
-            <th scope="col" >admin id</th>
+            <th scope="col" >Admin id</th>
             <th scope="col">Email</th>
           </tr>
         </thead>
@@ -139,11 +155,18 @@ $sql = "SELECT * from admins WHERE a_username = '$sessionName'";
         </tbody>
         <tfoot>
         </tfoot>
-      </table></div>
-  </div>
-  <div class="column">
-    <div class="card">
-      <table>
+      </table>
+      </p>
+          </article>
+          <!--content--article-ends-here--->
+          </article>
+          <article class= "card">
+              
+
+              <article class= "content">
+              <h3»Title</h3>
+              <p>
+              <table>
         <thead>
           <h2> List of customers</h2>
           <tr>
@@ -173,28 +196,40 @@ $sql = "SELECT * from admins WHERE a_username = '$sessionName'";
         <tfoot>
         </tfoot>
       </table>
-    </div>
-  </div>
-  <div class="column">
-    <div class="card">
-      <h2>Shoe trends currently:</h2>
-      <p> converse </p>
-      <p> Vans </p>
-    </div>
-  </div>
-  <div class="column">
-    <div class="card">  <h4>Pie Chart For product interactivity</h4>
-      <div class="chart"></div></div>
-  </div>
+              </p>
+              </article>
+              <!--content--article-ends-here--->
+              </article>
+              <article class= "card">
+    
+        
+                  <article class= "content">
+                  <h3»Title</h3>
+                  <p>
+                  <h2>Shoe trends currently:</h2>
+                  <p> Converse </p>
+                  <p> Vans </p>
+                  <p> Sliders </p>
+                  <p> Nikes </p>
+                  </p>
+                  </article>
+                  <!--content--article-ends-here--->
+                  </article>
+                  <article class= "card">
 
-
-
-  </div>
-
-</div>
-
-
-
+                      <article class= "content">
+                      <h3»Title</h3>
+                      <p>
+                      <div class="card">  <h4>Pie Chart For product interactivity</h4>
+                      <div class="chart"></div></div>
+                      <p> Orange: Clicked on men products </p>
+                      <p> Yellow: Clicked on men products </p>
+                      <p> Blue: Clicked on kids products  </p>
+                      <p> Black: Clicked on men products  </p>
+                      <p> Purple: Clicked on men products  </p>
+                   
+          </section>
+     
 
 
 
