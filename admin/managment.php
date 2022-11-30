@@ -25,6 +25,7 @@ if (isset($_POST['update'])){
   $newusername = $_POST['username'];
   $newuseremail = $_POST['useremail'];
   $newpassword = $_POST['password1'];
+  
 
   if ($newusername=='' or $newuseremail=='' or $newpassword==''){
     header('Location:Admine.php');
@@ -34,9 +35,12 @@ if (isset($_POST['update'])){
   else{
   
     $sql = "UPDATE `admins` SET `a_id` = '".$adminid."', `a_email` = '".$newuseremail."', `a_pass` = '".$newpassword."', `a_username` = '".$newusername."' WHERE `a_username`= '$sessionName'";
-    $result_query = mysqli_query($conn,$sql);}
-    $_SESSION['name'] =$row['a_username'];
-    $sessionName = $_SESSION['name'];
+    $result_query = mysqli_query($conn,$sql);
+    $_SESSION['name'] =$newusername;
+    session_start();
+  }
+    //$_SESSION['name'] =$row['a_username'];
+    //$sessionName = $_SESSION['name'];
 
     if($result_query){
    

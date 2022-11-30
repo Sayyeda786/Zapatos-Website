@@ -158,7 +158,7 @@ $result = $conn -> query($sql);
           $_SESSION['edit_article']=$row['article_no']?>
           
 
-          <a href="editproduct.php?id=<?=$row['article_no'];?>"><input type="button" value="Edit" name="edit" class="edit"></a>
+          <a href="editproduct.php?id=<?=$row['article_no'];?>&type=<?=$row['type'];?>"><input type="button" value="Edit" name="edit" class="edit"></a>
           <a href="delete.php?id=<?=$row['article_no'];?>&type=<?=$row['type'];?>"> <input type="button" class="delete" onclick="confirmation()" value="Delete"></a>
       
   
@@ -202,7 +202,7 @@ $result = $conn -> query($sql);
       <td>" .$row["description"] . "</td>
       <td>" .$row["cost"] . " </td>" ?>
       <td>
-      <a href="editproduct.php?id=<?=$row['article_no'];?>"><input type="button" value="Edit" name="edit" class="edit"></a>
+      <a href="editproduct.php?id=<?=$row['article_no'];?>&type=<?=$row['type'];?>"><input type="button" value="Edit" name="edit" class="edit"></a>
           <a href="delete.php?id=<?=$row['article_no'];?>&type=<?=$row['type'];?>"> <input type="button" class="delete" onclick="confirmation()" value="Delete"></a>
             </td>
       </tr>
@@ -242,7 +242,7 @@ $result = $conn -> query($sql);
       <td>" .$row["cost"] . " </td>" ?>
       <td>
       
-      <a href="editproduct.php?id=<?=$row['article_no'];?>"><input type="button" value="Edit" name="edit" class="edit"></a>
+      <a href="editproduct.php?id=<?=$row['article_no'];?>&type=<?=$row['type'];?>"><input type="button" value="Edit" name="edit" class="edit"></a>
       <a href="delete.php?id=<?=$row['article_no'];?>&type=<?=$row['type'];?>"> <input type="button" class="delete" onclick="confirmation()" value="Delete"></a>
             </td>
       </tr>

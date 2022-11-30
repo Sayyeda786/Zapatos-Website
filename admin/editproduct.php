@@ -3,6 +3,7 @@
 
 session_start();
     $article=$_GET['id'];
+    $PGender = $_GET['type'];
     $product = "SELECT *from men_items WHERE article_no = '$article'";
     $prodquery = mysqli_query($conn, $product);
     $row=mysqli_fetch_array($prodquery);
